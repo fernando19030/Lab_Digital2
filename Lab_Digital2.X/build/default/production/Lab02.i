@@ -1,4 +1,4 @@
-# 1 "Lab01.c"
+# 1 "Lab02.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,18 +6,18 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab01.c" 2
-# 19 "Lab01.c"
+# 1 "Lab02.c" 2
+# 12 "Lab02.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
-#pragma config PWRTE = ON
+#pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
 #pragma config CP = OFF
 #pragma config CPD = OFF
 #pragma config BOREN = OFF
 #pragma config IESO = OFF
 #pragma config FCMEN = OFF
-#pragma config LVP = ON
+#pragma config LVP = OFF
 
 
 #pragma config BOR4V = BOR40V
@@ -2507,7 +2507,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 37 "Lab01.c" 2
+# 30 "Lab02.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2642,7 +2642,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 38 "Lab01.c" 2
+# 31 "Lab02.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2741,104 +2741,15 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 39 "Lab01.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
+# 32 "Lab02.c" 2
 
 
 
 
-
-
-typedef unsigned short wchar_t;
-
-
-
-
-
-
-
-typedef struct {
- int rem;
- int quot;
-} div_t;
-typedef struct {
- unsigned rem;
- unsigned quot;
-} udiv_t;
-typedef struct {
- long quot;
- long rem;
-} ldiv_t;
-typedef struct {
- unsigned long quot;
- unsigned long rem;
-} uldiv_t;
-# 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-
-
-
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-
-
-
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
-# 104 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-# 40 "Lab01.c" 2
-
-# 1 "./Librerias.h" 1
-
-
-
-
-
-
-
-
+# 1 "./LCD.h" 1
+# 30 "./LCD.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 9 "./Librerias.h" 2
+# 30 "./LCD.h" 2
 
 
 
@@ -2846,29 +2757,51 @@ extern char * ftoa(float f, int * status);
 
 
 
+void Lcd_Port(char a);
 
-void config_osc(uint8_t frec);
-void config_tmr0(uint8_t prescaler);
-void config_ADC(uint8_t adcFrec);
-void transfer_ADC (uint8_t dato);
-void nibbles (uint8_t dato);
-void segmentos (uint8_t dato);
-# 41 "Lab01.c" 2
-# 54 "Lab01.c"
-uint8_t tabla [16] = {0X3F, 0X06, 0X5B, 0X4F, 0X66, 0X6D, 0X7D, 0X07, 0X7F, 0X67,
-                      0X77, 0X7C, 0X39, 0X5E, 0X79, 0X71};
+void Lcd_Cmd(char a);
+
+void Lcd_Clear(void);
+
+void Lcd_Set_Cursor(char a, char b);
+
+void Lcd_Init(void);
+
+void Lcd_Write_Char(char a);
+
+void Lcd_Write_String(char *a);
+
+void Lcd_Shift_Right(void);
+
+void Lcd_Shift_Left(void);
 
 
-uint8_t flags;
-uint8_t contador;
-uint8_t ADC;
-uint8_t parte_baja;
-uint8_t parte_alta;
+void convert(char *data,float a, int place);
+# 36 "Lab02.c" 2
+
+
+
+
+
+volatile uint8_t adc1 = 0;
+volatile uint8_t adc2 = 0;
+volatile uint8_t contador = 0;
+
+char sensor1[10];
+char sensor2[10];
+char cont1[10];
+
+float conv1 = 0;
+float conv2 = 0;
+float conv3 = 0;
+
 
 
 
 
 void setup(void);
+void Eusart(void);
+void putch(char data);
 
 
 
@@ -2876,112 +2809,101 @@ void setup(void);
 void __attribute__((picinterrupt(("")))) isr(void)
 {
 
-    if (T0IF == 1)
-    {
-        PORTBbits.RB2 = 0;
-        PORTBbits.RB3 = 0;
-
-        INTCONbits.T0IF = 0;
-        TMR0 = 217;
-
-        if (flags == 1) {
-           PORTBbits.RB2 = 0;
-           PORTBbits.RB3 = 1;
-           segmentos(parte_baja);
-           flags = 0;
+    if (PIR1bits.ADIF) {
+        if (ADCON0bits.CHS == 0) {
+            adc1 = ADRESH;
         }
 
         else {
-           PORTBbits.RB3 = 0;
-           PORTBbits.RB2 = 1;
-           segmentos(parte_alta);
-           flags = 1;
-        }
-    }
-
-
-    if (RBIF == 1){
-        if (RB0 == 1){
-            contador++;
-            PORTC = contador;
-        }
-
-        if (RB1 == 1){
-            contador--;
-            PORTC = contador;
-        }
-
-        INTCONbits.RBIF = 0;
-    }
-
-
-    if (PIR1bits.ADIF) {
-        if (ADCON0bits.CHS == 0) {
-
-            transfer_ADC(ADRESH);
+            adc2 = ADRESH;
+            PORTD++;
         }
 
         PIR1bits.ADIF = 0;
     }
 
-
 }
-
 
 
 
 
 void main(void) {
-    setup();
-    ADCON0bits.GO = 1;
+  unsigned int a;
+  setup();
+  Lcd_Init();
+  Lcd_Clear();
+  ADCON0bits.GO = 1;
+  while(1)
+  {
+
+      Lcd_Set_Cursor(1, 1);
+      Lcd_Write_String("S1:");
+      Lcd_Set_Cursor(1, 8);
+      Lcd_Write_String("S2:");
+      Lcd_Set_Cursor(1, 14);
+      Lcd_Write_String("S3:");
+
+      Eusart();
 
 
+      if (ADCON0bits.GO == 0){
+            if (ADCON0bits.CHS == 0) {
+                ADCON0bits.CHS = 1;
+            }
+            else {
+                ADCON0bits.CHS = 0;
+            }
 
-
-
-    while (1)
-    {
-        if (ADCON0bits.GO == 0){
             _delay((unsigned long)((200)*(8000000/4000000.0)));
             ADCON0bits.GO = 1;
         }
 
-        nibbles(ADC);
 
-        if (ADC > contador) {
-            PORTEbits.RE0 = 1;
-        }
+      Lcd_Set_Cursor(2, 1);
+      Lcd_Write_String(sensor1);
+      Lcd_Set_Cursor(2, 5);
+      Lcd_Write_String("V");
 
-        else {
-            PORTEbits.RE0 = 0;
-        }
+      Lcd_Set_Cursor(2, 7);
+      Lcd_Write_String(sensor2);
+      Lcd_Set_Cursor(2, 11);
+      Lcd_Write_String("V");
+
+      Lcd_Set_Cursor(2, 14);
+      Lcd_Write_String(cont1);
 
 
-    }
+      conv1 = 0;
+      conv2 = 0;
 
+      conv1 = (adc1 / (float) 255)*5;
+
+      convert(sensor1, conv1, 2);
+
+      conv2 = (adc2 / (float) 255)*5;
+      convert(sensor2, conv2, 2);
+
+      convert(cont1, contador, 2);
+
+      _delay((unsigned long)((500)*(8000000/4000.0)));
+  }
     return;
 }
 
-
-
-
-
 void setup(void) {
 
-    ANSEL = 0X01;
+    ANSEL = 0X03;
     ANSELH = 0X00;
 
-    TRISB = 0X03;
-    TRISC = 0X00;
-    TRISD = 0X00;
-    TRISA = 0X01;
-    TRISE = 0X00;
+    TRISB = 0X00;
+    TRISCbits.TRISC0 = 0;
+    TRISCbits.TRISC1 = 0;
+
+    TRISA = 0X03;
 
     PORTA = 0X00;
     PORTB = 0X00;
     PORTC = 0X00;
-    PORTD = 0X00;
-    PORTE = 0X00;
 
 
     OSCCONbits.IRCF2 = 1;
@@ -2992,25 +2914,9 @@ void setup(void) {
 
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-    INTCONbits.T0IE = 1;
-    INTCONbits.RBIE = 1;
     PIE1bits.ADIE = 1;
 
-    INTCONbits.T0IF = 0;
-    INTCONbits.RBIF = 0;
-    PIR1bits.ADIF = 0;
-
-
-    IOCBbits.IOCB0 = 1;
-    IOCBbits.IOCB1 = 1;
-
-
-    OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.PS2 = 1;
-    OPTION_REGbits.PS1 = 1;
-    OPTION_REGbits.PS0 = 1;
-    TMR0 = 217;
+    PIR1bits.RCIF = 0;
 
 
     ADCON1bits.ADFM = 0;
@@ -3024,7 +2930,62 @@ void setup(void) {
     _delay((unsigned long)((200)*(8000000/4000000.0)));
 
 
-    flags = 0X00;
-    contador = 0X00;
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 1;
 
+    BAUDCTLbits.BRG16 = 1;
+
+    SPBRG = 207;
+    SPBRGH = 0;
+
+    RCSTAbits.SPEN = 1;
+    RCSTAbits.RX9 = 0;
+    RCSTAbits.CREN = 1;
+
+    TXSTAbits.TXEN = 1;
+
+    return;
+}
+
+void putch(char data){
+    while (TXIF == 0);
+    TXREG = data;
+    return;
+}
+
+void Eusart(void) {
+   _delay((unsigned long)((100)*(8000000/4000.0)));
+   printf("\rSensor 1: \r");
+   _delay((unsigned long)((100)*(8000000/4000.0)));
+   printf(sensor1);
+   _delay((unsigned long)((100)*(8000000/4000.0)));
+   printf("\r---------------\r");
+
+
+   _delay((unsigned long)((100)*(8000000/4000.0)));
+   printf("\rSensor 2: \r");
+   _delay((unsigned long)((100)*(8000000/4000.0)));
+   printf(sensor2);
+   _delay((unsigned long)((100)*(8000000/4000.0)));
+   printf("\r---------------\r");
+
+   _delay((unsigned long)((100)*(8000000/4000.0)));
+   printf("\rContador: \r");
+   _delay((unsigned long)((100)*(8000000/4000.0)));
+   printf(cont1);
+   _delay((unsigned long)((100)*(8000000/4000.0)));
+   printf("\r---------------\r");
+
+   if (RCREG == '+') {
+       contador++;
+       RCREG = 0;
+   }
+   else if (RCREG == '-') {
+       contador--;
+       RCREG = 0;
+   }
+   else {
+       (0);
+   }
+   return;
 }
