@@ -29,15 +29,15 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"64 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+"67 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
 [v _isr isr `II(v  1 e 1 0 ]
-"85
+"88
 [v _main main `(v  1 e 1 0 ]
-"148
+"151
 [v _setup setup `(v  1 e 1 0 ]
-"205
+"208
 [v _putch putch `(v  1 e 1 0 ]
-"211
+"214
 [v _Eusart Eusart `(v  1 e 1 0 ]
 "16 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\LCD.c
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
@@ -245,31 +245,31 @@
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "4544
 [v _TXIF TXIF `VEb  1 e 0 @100 ]
-"41 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+"44 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
 [v _adc1 adc1 `VEuc  1 e 1 0 ]
-"42
-[v _adc2 adc2 `VEuc  1 e 1 0 ]
-"43
-[v _contador contador `VEuc  1 e 1 0 ]
 "45
-[v _sensor1 sensor1 `[10]uc  1 e 10 0 ]
+[v _adc2 adc2 `VEuc  1 e 1 0 ]
 "46
-[v _sensor2 sensor2 `[10]uc  1 e 10 0 ]
-"47
-[v _cont1 cont1 `[10]uc  1 e 10 0 ]
+[v _contador contador `VEuc  1 e 1 0 ]
+"48
+[v _sensor1 sensor1 `[10]uc  1 e 10 0 ]
 "49
-[v _conv1 conv1 `f  1 e 4 0 ]
+[v _sensor2 sensor2 `[10]uc  1 e 10 0 ]
 "50
+[v _cont1 cont1 `[10]uc  1 e 10 0 ]
+"52
+[v _conv1 conv1 `f  1 e 4 0 ]
+"53
 [v _conv2 conv2 `f  1 e 4 0 ]
-"85
+"88
 [v _main main `(v  1 e 1 0 ]
 {
-"146
+"149
 } 0
-"148
+"151
 [v _setup setup `(v  1 e 1 0 ]
 {
-"203
+"206
 } 0
 "84 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\LCD.c
 [v _convert convert `(v  1 e 1 0 ]
@@ -488,10 +488,10 @@
 [v Lcd_Port@a a `uc  1 a 1 3 ]
 "18
 } 0
-"211 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+"214 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
 [v _Eusart Eusart `(v  1 e 1 0 ]
 {
-"246
+"249
 } 0
 "477 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -504,16 +504,16 @@
 [v printf@f f `*.26DCuc  1 p 2 4 ]
 "1567
 } 0
-"205 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+"208 C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 3 ]
-"209
+"212
 } 0
-"64
+"67
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"80
+"83
 } 0

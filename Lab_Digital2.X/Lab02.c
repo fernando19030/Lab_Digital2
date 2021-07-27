@@ -1,12 +1,15 @@
-/*
- * File:   main.c
- * Author: Pablo
- * Ejemplo de uso de la LCD 16x2 en modo 4 bits
- * Se utilizó y se adaptaron las librerías de Ligo George 
- * de la página www.electrosome.com
- * Enlace: https://electrosome.com/lcd-pic-mplab-xc8/
- * Created on 31 de enero de 2020, 11:20 AM
- */
+// Archivo:  Lab02.c
+// Dispositivo:	PIC16F887
+// Autor:    Fernando Arribas
+// Compilador:	pic-as (v2.31), MPLABX V5.45
+// 
+// Programa: Coversion ADC y contador con Eusart mostrado en LCD
+//           
+// Hardware: 1 LCD en PORTB y RC0 y RC1, Pots en RA0 y RA1 y TTL en RC6 y RC7
+//           
+//
+// Creado: 12 jul, 2021
+// Ultima modificacion: 19 jul, 2021
 
 
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (RCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)

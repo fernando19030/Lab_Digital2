@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Earst\AppData\Local\Temp\sg38.o
+$C:\Users\Earst\AppData\Local\Temp\sgak.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -110,30 +110,30 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab_Digital2.X.production.o
-F cinit CODE >796:C:\Users\Earst\AppData\Local\Temp\sg38.s
-F cinit CODE >799:C:\Users\Earst\AppData\Local\Temp\sg38.s
-F cinit CODE >849:C:\Users\Earst\AppData\Local\Temp\sg38.s
-10 cinit CODE >850:C:\Users\Earst\AppData\Local\Temp\sg38.s
-11 cinit CODE >851:C:\Users\Earst\AppData\Local\Temp\sg38.s
-12 cinit CODE >852:C:\Users\Earst\AppData\Local\Temp\sg38.s
-13 cinit CODE >853:C:\Users\Earst\AppData\Local\Temp\sg38.s
-18 cinit CODE >859:C:\Users\Earst\AppData\Local\Temp\sg38.s
-18 cinit CODE >861:C:\Users\Earst\AppData\Local\Temp\sg38.s
-19 cinit CODE >862:C:\Users\Earst\AppData\Local\Temp\sg38.s
-4 intentry CODE >64:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-146A text23 CODE >64:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+F cinit CODE >796:C:\Users\Earst\AppData\Local\Temp\sgak.s
+F cinit CODE >799:C:\Users\Earst\AppData\Local\Temp\sgak.s
+F cinit CODE >849:C:\Users\Earst\AppData\Local\Temp\sgak.s
+10 cinit CODE >850:C:\Users\Earst\AppData\Local\Temp\sgak.s
+11 cinit CODE >851:C:\Users\Earst\AppData\Local\Temp\sgak.s
+12 cinit CODE >852:C:\Users\Earst\AppData\Local\Temp\sgak.s
+13 cinit CODE >853:C:\Users\Earst\AppData\Local\Temp\sgak.s
+18 cinit CODE >859:C:\Users\Earst\AppData\Local\Temp\sgak.s
+18 cinit CODE >861:C:\Users\Earst\AppData\Local\Temp\sgak.s
+19 cinit CODE >862:C:\Users\Earst\AppData\Local\Temp\sgak.s
+4 intentry CODE >67:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
 146A text23 CODE >67:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1470 text23 CODE >68:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1479 text23 CODE >69:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-147F text23 CODE >70:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1480 text23 CODE >73:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1486 text23 CODE >74:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-148C text23 CODE >77:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-148E text23 CODE >80:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-13A6 text22 CODE >205:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-13A7 text22 CODE >206:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-13AD text22 CODE >207:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-13AF text22 CODE >209:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+146A text23 CODE >70:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1470 text23 CODE >71:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1479 text23 CODE >72:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+147F text23 CODE >73:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1480 text23 CODE >76:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1486 text23 CODE >77:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+148C text23 CODE >80:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+148E text23 CODE >83:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+13A6 text22 CODE >208:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+13A7 text22 CODE >209:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+13AD text22 CODE >210:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+13AF text22 CODE >212:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
 1567 text21 CODE >477:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
 1567 text21 CODE >550:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
 156D text21 CODE >553:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
@@ -147,32 +147,32 @@ F cinit CODE >849:C:\Users\Earst\AppData\Local\Temp\sg38.s
 1583 text21 CODE >848:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
 15A0 text21 CODE >553:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
 15BA text21 CODE >1567:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\doprnt.c
-85D text20 CODE >211:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-85D text20 CODE >212:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-86C text20 CODE >213:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-875 text20 CODE >214:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-884 text20 CODE >215:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-88D text20 CODE >216:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-89C text20 CODE >217:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-8A5 text20 CODE >220:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-8B4 text20 CODE >221:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-8BD text20 CODE >222:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-8CC text20 CODE >223:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-8D5 text20 CODE >224:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-8E4 text20 CODE >225:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-8ED text20 CODE >227:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-8FC text20 CODE >228:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-905 text20 CODE >229:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-914 text20 CODE >230:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-91D text20 CODE >231:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-92C text20 CODE >232:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-935 text20 CODE >234:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-93D text20 CODE >235:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-943 text20 CODE >236:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-946 text20 CODE >237:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-947 text20 CODE >238:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-94D text20 CODE >239:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-952 text20 CODE >246:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+85D text20 CODE >214:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+85D text20 CODE >215:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+86C text20 CODE >216:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+875 text20 CODE >217:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+884 text20 CODE >218:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+88D text20 CODE >219:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+89C text20 CODE >220:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+8A5 text20 CODE >223:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+8B4 text20 CODE >224:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+8BD text20 CODE >225:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+8CC text20 CODE >226:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+8D5 text20 CODE >227:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+8E4 text20 CODE >228:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+8ED text20 CODE >230:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+8FC text20 CODE >231:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+905 text20 CODE >232:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+914 text20 CODE >233:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+91D text20 CODE >234:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+92C text20 CODE >235:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+935 text20 CODE >237:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+93D text20 CODE >238:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+943 text20 CODE >239:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+946 text20 CODE >240:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+947 text20 CODE >241:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+94D text20 CODE >242:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+952 text20 CODE >249:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
 7F9 text19 CODE >16:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\LCD.c
 7FA text19 CODE >17:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\LCD.c
 7FE text19 CODE >18:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\LCD.c
@@ -665,90 +665,90 @@ D5 text2 CODE >106:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\LCD
 467 text2 CODE >126:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\LCD.c
 46D text2 CODE >139:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\LCD.c
 47D text2 CODE >140:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\LCD.c
-1520 text1 CODE >148:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1520 text1 CODE >150:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1524 text1 CODE >151:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1525 text1 CODE >153:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1528 text1 CODE >154:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1529 text1 CODE >155:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-152A text1 CODE >157:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-152C text1 CODE >159:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-152F text1 CODE >160:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1530 text1 CODE >161:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1531 text1 CODE >164:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1534 text1 CODE >165:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1535 text1 CODE >166:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1536 text1 CODE >167:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1537 text1 CODE >170:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1538 text1 CODE >171:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1539 text1 CODE >172:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-153A text1 CODE >174:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-153D text1 CODE >177:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1540 text1 CODE >178:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1541 text1 CODE >179:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1542 text1 CODE >181:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1545 text1 CODE >182:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1547 text1 CODE >183:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-154B text1 CODE >184:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-154E text1 CODE >185:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1552 text1 CODE >188:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1555 text1 CODE >189:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1556 text1 CODE >191:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1559 text1 CODE >193:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-155D text1 CODE >194:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-155E text1 CODE >196:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1561 text1 CODE >197:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1562 text1 CODE >198:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1563 text1 CODE >200:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-1566 text1 CODE >203:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B30 maintext CODE >85:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B30 maintext CODE >87:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B35 maintext CODE >88:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B3A maintext CODE >89:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B3F maintext CODE >90:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B42 maintext CODE >91:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1520 text1 CODE >151:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1520 text1 CODE >153:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1524 text1 CODE >154:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1525 text1 CODE >156:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1528 text1 CODE >157:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1529 text1 CODE >158:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+152A text1 CODE >160:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+152C text1 CODE >162:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+152F text1 CODE >163:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1530 text1 CODE >164:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1531 text1 CODE >167:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1534 text1 CODE >168:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1535 text1 CODE >169:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1536 text1 CODE >170:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1537 text1 CODE >173:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1538 text1 CODE >174:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1539 text1 CODE >175:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+153A text1 CODE >177:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+153D text1 CODE >180:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1540 text1 CODE >181:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1541 text1 CODE >182:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1542 text1 CODE >184:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1545 text1 CODE >185:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1547 text1 CODE >186:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+154B text1 CODE >187:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+154E text1 CODE >188:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1552 text1 CODE >191:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1555 text1 CODE >192:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1556 text1 CODE >194:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1559 text1 CODE >196:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+155D text1 CODE >197:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+155E text1 CODE >199:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1561 text1 CODE >200:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1562 text1 CODE >201:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1563 text1 CODE >203:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+1566 text1 CODE >206:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B30 maintext CODE >88:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B30 maintext CODE >90:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B35 maintext CODE >91:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B3A maintext CODE >92:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B3F maintext CODE >93:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
 B42 maintext CODE >94:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B4A maintext CODE >95:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B53 maintext CODE >96:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B5F maintext CODE >97:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B68 maintext CODE >98:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B74 maintext CODE >99:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B7D maintext CODE >101:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B82 maintext CODE >104:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B88 maintext CODE >105:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B93 maintext CODE >106:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B99 maintext CODE >107:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B9A maintext CODE >109:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-B9E maintext CODE >112:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BA5 maintext CODE >113:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BA8 maintext CODE >117:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BB0 maintext CODE >118:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BB9 maintext CODE >119:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BC5 maintext CODE >120:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BCE maintext CODE >122:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BDA maintext CODE >123:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BE3 maintext CODE >124:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BEF maintext CODE >125:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-BF8 maintext CODE >127:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-C04 maintext CODE >128:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-C0D maintext CODE >131:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-C17 maintext CODE >132:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-C1F maintext CODE >134:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-C8A maintext CODE >136:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-C9C maintext CODE >138:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-D07 maintext CODE >139:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-D19 maintext CODE >141:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-D66 maintext CODE >143:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
-139E clrtext CODE >836:C:\Users\Earst\AppData\Local\Temp\sg38.s
-139E clrtext CODE >837:C:\Users\Earst\AppData\Local\Temp\sg38.s
-139F clrtext CODE >838:C:\Users\Earst\AppData\Local\Temp\sg38.s
-139F clrtext CODE >839:C:\Users\Earst\AppData\Local\Temp\sg38.s
-13A0 clrtext CODE >840:C:\Users\Earst\AppData\Local\Temp\sg38.s
-13A1 clrtext CODE >841:C:\Users\Earst\AppData\Local\Temp\sg38.s
-13A2 clrtext CODE >842:C:\Users\Earst\AppData\Local\Temp\sg38.s
-13A3 clrtext CODE >843:C:\Users\Earst\AppData\Local\Temp\sg38.s
-13A4 clrtext CODE >844:C:\Users\Earst\AppData\Local\Temp\sg38.s
-13A5 clrtext CODE >845:C:\Users\Earst\AppData\Local\Temp\sg38.s
+B42 maintext CODE >97:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B4A maintext CODE >98:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B53 maintext CODE >99:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B5F maintext CODE >100:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B68 maintext CODE >101:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B74 maintext CODE >102:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B7D maintext CODE >104:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B82 maintext CODE >107:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B88 maintext CODE >108:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B93 maintext CODE >109:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B99 maintext CODE >110:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B9A maintext CODE >112:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+B9E maintext CODE >115:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BA5 maintext CODE >116:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BA8 maintext CODE >120:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BB0 maintext CODE >121:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BB9 maintext CODE >122:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BC5 maintext CODE >123:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BCE maintext CODE >125:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BDA maintext CODE >126:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BE3 maintext CODE >127:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BEF maintext CODE >128:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+BF8 maintext CODE >130:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+C04 maintext CODE >131:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+C0D maintext CODE >134:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+C17 maintext CODE >135:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+C1F maintext CODE >137:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+C8A maintext CODE >139:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+C9C maintext CODE >141:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+D07 maintext CODE >142:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+D19 maintext CODE >144:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+D66 maintext CODE >146:C:\Users\Earst\MPLABXProjects\Lab_Digital2\Lab_Digital2.X\Lab02.c
+139E clrtext CODE >836:C:\Users\Earst\AppData\Local\Temp\sgak.s
+139E clrtext CODE >837:C:\Users\Earst\AppData\Local\Temp\sgak.s
+139F clrtext CODE >838:C:\Users\Earst\AppData\Local\Temp\sgak.s
+139F clrtext CODE >839:C:\Users\Earst\AppData\Local\Temp\sgak.s
+13A0 clrtext CODE >840:C:\Users\Earst\AppData\Local\Temp\sgak.s
+13A1 clrtext CODE >841:C:\Users\Earst\AppData\Local\Temp\sgak.s
+13A2 clrtext CODE >842:C:\Users\Earst\AppData\Local\Temp\sgak.s
+13A3 clrtext CODE >843:C:\Users\Earst\AppData\Local\Temp\sgak.s
+13A4 clrtext CODE >844:C:\Users\Earst\AppData\Local\Temp\sgak.s
+13A5 clrtext CODE >845:C:\Users\Earst\AppData\Local\Temp\sgak.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -776,13 +776,13 @@ __end_of_Lcd_Init 29B4 0 CODE 0 text16 dist/default/production\Lab_Digital2.X.pr
 __end_of_Lcd_Port FFE 0 CODE 0 text19 dist/default/production\Lab_Digital2.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _TXIF 64 0 ABS 0 - dist/default/production\Lab_Digital2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Earst\AppData\Local\Temp\sg38.o
+___sp 0 0 STACK 2 stack C:\Users\Earst\AppData\Local\Temp\sgak.o
 _adc1 AE 0 BANK1 1 bssBANK1 dist/default/production\Lab_Digital2.X.production.o
 _adc2 AD 0 BANK1 1 bssBANK1 dist/default/production\Lab_Digital2.X.production.o
 _main 1660 0 CODE 0 maintext dist/default/production\Lab_Digital2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab_Digital2.X.production.o
 _Lcd_Write_Char 277A 0 CODE 0 text14 dist/default/production\Lab_Digital2.X.production.o
-start 18 0 CODE 0 init C:\Users\Earst\AppData\Local\Temp\sg38.o
+start 18 0 CODE 0 init C:\Users\Earst\AppData\Local\Temp\sgak.o
 ___flmul@aexp 63 0 BANK0 1 cstackBANK0 dist/default/production\Lab_Digital2.X.production.o
 ___flmul@bexp 64 0 BANK0 1 cstackBANK0 dist/default/production\Lab_Digital2.X.production.o
 ___flmul@prod 65 0 BANK0 1 cstackBANK0 dist/default/production\Lab_Digital2.X.production.o
@@ -802,12 +802,12 @@ convert@temp D3 0 BANK1 1 cstackBANK1 dist/default/production\Lab_Digital2.X.pro
 __Hpowerup 0 0 CODE 0 powerup -
 printf@c 22 0 BANK0 1 cstackBANK0 dist/default/production\Lab_Digital2.X.production.o
 printf@f 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab_Digital2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sg38.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sg38.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sg38.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sg38.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sg38.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sg38.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sgak.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sgak.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sgak.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sgak.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sgak.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Earst\AppData\Local\Temp\sgak.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab_Digital2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab_Digital2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -840,8 +840,8 @@ __end_of___flmul FBE 0 CODE 0 text8 dist/default/production\Lab_Digital2.X.produ
 __end_of___flsub 2834 0 CODE 0 text6 dist/default/production\Lab_Digital2.X.production.o
 __end_of___fltol 2D40 0 CODE 0 text5 dist/default/production\Lab_Digital2.X.production.o
 __Umul8_16@multiplicand 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab_Digital2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Earst\AppData\Local\Temp\sg38.o
-___stacklo 0 0 ABS 0 - C:\Users\Earst\AppData\Local\Temp\sg38.o
+___stackhi 0 0 ABS 0 - C:\Users\Earst\AppData\Local\Temp\sgak.o
+___stacklo 0 0 ABS 0 - C:\Users\Earst\AppData\Local\Temp\sgak.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Lab_Digital2.X.production.o
 ___fladd@a 77 0 COMMON 1 cstackCOMMON dist/default/production\Lab_Digital2.X.production.o
 ___fladd@b 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab_Digital2.X.production.o
@@ -864,7 +864,7 @@ __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab_Digital2.X.p
 __pcstackBANK1 CD 0 BANK1 1 cstackBANK1 dist/default/production\Lab_Digital2.X.production.o
 __end_of_printf 2B76 0 CODE 0 text21 dist/default/production\Lab_Digital2.X.production.o
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\Lab_Digital2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Earst\AppData\Local\Temp\sg38.o
+___int_sp 0 0 STACK 2 stack C:\Users\Earst\AppData\Local\Temp\sgak.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -926,7 +926,7 @@ __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production\Lab_Digital2.X.pr
 __stringtab 1000 0 STRING 0 strings dist/default/production\Lab_Digital2.X.production.o
 Lcd_Write_String@a 76 0 COMMON 1 cstackCOMMON dist/default/production\Lab_Digital2.X.production.o
 Lcd_Write_String@i 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab_Digital2.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Earst\AppData\Local\Temp\sg38.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Earst\AppData\Local\Temp\sgak.o
 __size_of_Lcd_Clear 0 0 ABS 0 - dist/default/production\Lab_Digital2.X.production.o
 __end_of___xxtofl 3000 0 CODE 0 text3 dist/default/production\Lab_Digital2.X.production.o
 __end_of_Lcd_Cmd FF2 0 CODE 0 text18 dist/default/production\Lab_Digital2.X.production.o

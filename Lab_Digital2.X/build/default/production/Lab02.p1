@@ -42,8 +42,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 [p mainexit ]
-"57 Lab02.c
-[; ;Lab02.c: 57: void setup(void);
+"60 Lab02.c
+[; ;Lab02.c: 60: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "45 ./LCD.h
 [; ;./LCD.h: 45: void Lcd_Init(void);
@@ -57,8 +57,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49
 [; ;./LCD.h: 49: void Lcd_Write_String(char *a);
 [v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*uc ]
-"58 Lab02.c
-[; ;Lab02.c: 58: void Eusart(void);
+"61 Lab02.c
+[; ;Lab02.c: 61: void Eusart(void);
 [v _Eusart `(v ~T0 @X0 0 ef ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
@@ -221,29 +221,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1140 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
-"12 Lab02.c
+"15 Lab02.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
-"13
-[p x WDTE  =  OFF        ]
-"14
-[p x PWRTE  =  OFF       ]
-"15
-[p x MCLRE  =  OFF       ]
 "16
-[p x CP  =  OFF          ]
+[p x WDTE  =  OFF        ]
 "17
-[p x CPD  =  OFF         ]
+[p x PWRTE  =  OFF       ]
 "18
-[p x BOREN  =  OFF       ]
+[p x MCLRE  =  OFF       ]
 "19
-[p x IESO  =  OFF        ]
+[p x CP  =  OFF          ]
 "20
-[p x FCMEN  =  OFF       ]
+[p x CPD  =  OFF         ]
 "21
-[p x LVP  =  OFF         ]
+[p x BOREN  =  OFF       ]
+"22
+[p x IESO  =  OFF        ]
+"23
+[p x FCMEN  =  OFF       ]
 "24
+[p x LVP  =  OFF         ]
+"27
 [p x BOR4V  =  BOR40V    ]
-"25
+"28
 [p x WRT  =  OFF         ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
@@ -479,497 +479,497 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"41 Lab02.c
-[; ;Lab02.c: 41: volatile uint8_t adc1 = 0;
+"44 Lab02.c
+[; ;Lab02.c: 44: volatile uint8_t adc1 = 0;
 [v _adc1 `Vuc ~T0 @X0 1 e ]
 [i _adc1
 -> -> 0 `i `uc
 ]
-"42
-[; ;Lab02.c: 42: volatile uint8_t adc2 = 0;
+"45
+[; ;Lab02.c: 45: volatile uint8_t adc2 = 0;
 [v _adc2 `Vuc ~T0 @X0 1 e ]
 [i _adc2
 -> -> 0 `i `uc
 ]
-"43
-[; ;Lab02.c: 43: volatile uint8_t contador = 0;
+"46
+[; ;Lab02.c: 46: volatile uint8_t contador = 0;
 [v _contador `Vuc ~T0 @X0 1 e ]
 [i _contador
 -> -> 0 `i `uc
 ]
-"45
-[; ;Lab02.c: 45: char sensor1[10];
+"48
+[; ;Lab02.c: 48: char sensor1[10];
 [v _sensor1 `uc ~T0 @X0 -> 10 `i e ]
-"46
-[; ;Lab02.c: 46: char sensor2[10];
-[v _sensor2 `uc ~T0 @X0 -> 10 `i e ]
-"47
-[; ;Lab02.c: 47: char cont1[10];
-[v _cont1 `uc ~T0 @X0 -> 10 `i e ]
 "49
-[; ;Lab02.c: 49: float conv1 = 0;
+[; ;Lab02.c: 49: char sensor2[10];
+[v _sensor2 `uc ~T0 @X0 -> 10 `i e ]
+"50
+[; ;Lab02.c: 50: char cont1[10];
+[v _cont1 `uc ~T0 @X0 -> 10 `i e ]
+"52
+[; ;Lab02.c: 52: float conv1 = 0;
 [v _conv1 `f ~T0 @X0 1 e ]
 [i _conv1
 -> -> 0 `i `f
 ]
-"50
-[; ;Lab02.c: 50: float conv2 = 0;
+"53
+[; ;Lab02.c: 53: float conv2 = 0;
 [v _conv2 `f ~T0 @X0 1 e ]
 [i _conv2
 -> -> 0 `i `f
 ]
-"51
-[; ;Lab02.c: 51: float conv3 = 0;
+"54
+[; ;Lab02.c: 54: float conv3 = 0;
 [v _conv3 `f ~T0 @X0 1 e ]
 [i _conv3
 -> -> 0 `i `f
 ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"64
-[; ;Lab02.c: 64: void __attribute__((picinterrupt(("")))) isr(void)
+"67
+[; ;Lab02.c: 67: void __attribute__((picinterrupt(("")))) isr(void)
 [v _isr `(v ~T1 @X0 1 ef ]
-"65
-[; ;Lab02.c: 65: {
+"68
+[; ;Lab02.c: 68: {
 {
 [e :U _isr ]
 [f ]
-"67
-[; ;Lab02.c: 67:     if (PIR1bits.ADIF) {
+"70
+[; ;Lab02.c: 70:     if (PIR1bits.ADIF) {
 [e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 140  ]
 {
-"68
-[; ;Lab02.c: 68:         if (ADCON0bits.CHS == 0) {
+"71
+[; ;Lab02.c: 71:         if (ADCON0bits.CHS == 0) {
 [e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 141  ]
 {
-"69
-[; ;Lab02.c: 69:             adc1 = ADRESH;
+"72
+[; ;Lab02.c: 72:             adc1 = ADRESH;
 [e = _adc1 _ADRESH ]
-"70
-[; ;Lab02.c: 70:         }
+"73
+[; ;Lab02.c: 73:         }
 }
 [e $U 142  ]
-"72
-[; ;Lab02.c: 72:         else {
+"75
+[; ;Lab02.c: 75:         else {
 [e :U 141 ]
 {
-"73
-[; ;Lab02.c: 73:             adc2 = ADRESH;
+"76
+[; ;Lab02.c: 76:             adc2 = ADRESH;
 [e = _adc2 _ADRESH ]
-"74
-[; ;Lab02.c: 74:             PORTD++;
+"77
+[; ;Lab02.c: 77:             PORTD++;
 [e ++ _PORTD -> -> 1 `i `Vuc ]
-"75
-[; ;Lab02.c: 75:         }
+"78
+[; ;Lab02.c: 78:         }
 }
 [e :U 142 ]
-"77
-[; ;Lab02.c: 77:         PIR1bits.ADIF = 0;
+"80
+[; ;Lab02.c: 80:         PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"78
-[; ;Lab02.c: 78:     }
+"81
+[; ;Lab02.c: 81:     }
 }
 [e :U 140 ]
-"80
-[; ;Lab02.c: 80: }
+"83
+[; ;Lab02.c: 83: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"85
-[; ;Lab02.c: 85: void main(void) {
+"88
+[; ;Lab02.c: 88: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"86
-[; ;Lab02.c: 86:   unsigned int a;
-[v _a `ui ~T0 @X0 1 a ]
-"87
-[; ;Lab02.c: 87:   setup();
-[e ( _setup ..  ]
-"88
-[; ;Lab02.c: 88:   Lcd_Init();
-[e ( _Lcd_Init ..  ]
 "89
-[; ;Lab02.c: 89:   Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
+[; ;Lab02.c: 89:   unsigned int a;
+[v _a `ui ~T0 @X0 1 a ]
 "90
-[; ;Lab02.c: 90:   ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+[; ;Lab02.c: 90:   setup();
+[e ( _setup ..  ]
 "91
-[; ;Lab02.c: 91:   while(1)
-[e :U 145 ]
+[; ;Lab02.c: 91:   Lcd_Init();
+[e ( _Lcd_Init ..  ]
 "92
-[; ;Lab02.c: 92:   {
-{
+[; ;Lab02.c: 92:   Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"93
+[; ;Lab02.c: 93:   ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "94
-[; ;Lab02.c: 94:       Lcd_Set_Cursor(1, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;Lab02.c: 94:   while(1)
+[e :U 145 ]
 "95
-[; ;Lab02.c: 95:       Lcd_Write_String("S1:");
-[e ( _Lcd_Write_String (1 :s 1C ]
-"96
-[; ;Lab02.c: 96:       Lcd_Set_Cursor(1, 8);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
+[; ;Lab02.c: 95:   {
+{
 "97
-[; ;Lab02.c: 97:       Lcd_Write_String("S2:");
-[e ( _Lcd_Write_String (1 :s 2C ]
+[; ;Lab02.c: 97:       Lcd_Set_Cursor(1, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "98
-[; ;Lab02.c: 98:       Lcd_Set_Cursor(1, 14);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 14 `i `uc ]
+[; ;Lab02.c: 98:       Lcd_Write_String("S1:");
+[e ( _Lcd_Write_String (1 :s 1C ]
 "99
-[; ;Lab02.c: 99:       Lcd_Write_String("S3:");
-[e ( _Lcd_Write_String (1 :s 3C ]
+[; ;Lab02.c: 99:       Lcd_Set_Cursor(1, 8);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
+"100
+[; ;Lab02.c: 100:       Lcd_Write_String("S2:");
+[e ( _Lcd_Write_String (1 :s 2C ]
 "101
-[; ;Lab02.c: 101:       Eusart();
-[e ( _Eusart ..  ]
+[; ;Lab02.c: 101:       Lcd_Set_Cursor(1, 14);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 14 `i `uc ]
+"102
+[; ;Lab02.c: 102:       Lcd_Write_String("S3:");
+[e ( _Lcd_Write_String (1 :s 3C ]
 "104
-[; ;Lab02.c: 104:       if (ADCON0bits.GO == 0){
+[; ;Lab02.c: 104:       Eusart();
+[e ( _Eusart ..  ]
+"107
+[; ;Lab02.c: 107:       if (ADCON0bits.GO == 0){
 [e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 147  ]
 {
-"105
-[; ;Lab02.c: 105:             if (ADCON0bits.CHS == 0) {
+"108
+[; ;Lab02.c: 108:             if (ADCON0bits.CHS == 0) {
 [e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 148  ]
 {
-"106
-[; ;Lab02.c: 106:                 ADCON0bits.CHS = 1;
-[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
-"107
-[; ;Lab02.c: 107:             }
-}
-[e $U 149  ]
-"108
-[; ;Lab02.c: 108:             else {
-[e :U 148 ]
-{
 "109
-[; ;Lab02.c: 109:                 ADCON0bits.CHS = 0;
-[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+[; ;Lab02.c: 109:                 ADCON0bits.CHS = 1;
+[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
 "110
 [; ;Lab02.c: 110:             }
 }
-[e :U 149 ]
+[e $U 149  ]
+"111
+[; ;Lab02.c: 111:             else {
+[e :U 148 ]
+{
 "112
-[; ;Lab02.c: 112:             _delay((unsigned long)((200)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;Lab02.c: 112:                 ADCON0bits.CHS = 0;
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
 "113
-[; ;Lab02.c: 113:             ADCON0bits.GO = 1;
+[; ;Lab02.c: 113:             }
+}
+[e :U 149 ]
+"115
+[; ;Lab02.c: 115:             _delay((unsigned long)((200)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"116
+[; ;Lab02.c: 116:             ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"114
-[; ;Lab02.c: 114:         }
+"117
+[; ;Lab02.c: 117:         }
 }
 [e :U 147 ]
-"117
-[; ;Lab02.c: 117:       Lcd_Set_Cursor(2, 1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"118
-[; ;Lab02.c: 118:       Lcd_Write_String(sensor1);
-[e ( _Lcd_Write_String (1 &U _sensor1 ]
-"119
-[; ;Lab02.c: 119:       Lcd_Set_Cursor(2, 5);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
 "120
-[; ;Lab02.c: 120:       Lcd_Write_String("V");
-[e ( _Lcd_Write_String (1 :s 4C ]
+[; ;Lab02.c: 120:       Lcd_Set_Cursor(2, 1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"121
+[; ;Lab02.c: 121:       Lcd_Write_String(sensor1);
+[e ( _Lcd_Write_String (1 &U _sensor1 ]
 "122
-[; ;Lab02.c: 122:       Lcd_Set_Cursor(2, 7);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 7 `i `uc ]
+[; ;Lab02.c: 122:       Lcd_Set_Cursor(2, 5);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
 "123
-[; ;Lab02.c: 123:       Lcd_Write_String(sensor2);
-[e ( _Lcd_Write_String (1 &U _sensor2 ]
-"124
-[; ;Lab02.c: 124:       Lcd_Set_Cursor(2, 11);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 11 `i `uc ]
+[; ;Lab02.c: 123:       Lcd_Write_String("V");
+[e ( _Lcd_Write_String (1 :s 4C ]
 "125
-[; ;Lab02.c: 125:       Lcd_Write_String("V");
-[e ( _Lcd_Write_String (1 :s 5C ]
+[; ;Lab02.c: 125:       Lcd_Set_Cursor(2, 7);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 7 `i `uc ]
+"126
+[; ;Lab02.c: 126:       Lcd_Write_String(sensor2);
+[e ( _Lcd_Write_String (1 &U _sensor2 ]
 "127
-[; ;Lab02.c: 127:       Lcd_Set_Cursor(2, 14);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
+[; ;Lab02.c: 127:       Lcd_Set_Cursor(2, 11);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 11 `i `uc ]
 "128
-[; ;Lab02.c: 128:       Lcd_Write_String(cont1);
-[e ( _Lcd_Write_String (1 &U _cont1 ]
+[; ;Lab02.c: 128:       Lcd_Write_String("V");
+[e ( _Lcd_Write_String (1 :s 5C ]
+"130
+[; ;Lab02.c: 130:       Lcd_Set_Cursor(2, 14);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
 "131
-[; ;Lab02.c: 131:       conv1 = 0;
-[e = _conv1 -> -> 0 `i `f ]
-"132
-[; ;Lab02.c: 132:       conv2 = 0;
-[e = _conv2 -> -> 0 `i `f ]
+[; ;Lab02.c: 131:       Lcd_Write_String(cont1);
+[e ( _Lcd_Write_String (1 &U _cont1 ]
 "134
-[; ;Lab02.c: 134:       conv1 = (adc1 / (float) 255)*5;
+[; ;Lab02.c: 134:       conv1 = 0;
+[e = _conv1 -> -> 0 `i `f ]
+"135
+[; ;Lab02.c: 135:       conv2 = 0;
+[e = _conv2 -> -> 0 `i `f ]
+"137
+[; ;Lab02.c: 137:       conv1 = (adc1 / (float) 255)*5;
 [e = _conv1 * / -> -> _adc1 `i `f -> -> 255 `i `f -> -> 5 `i `f ]
-"136
-[; ;Lab02.c: 136:       convert(sensor1, conv1, 2);
-[e ( _convert (3 , , &U _sensor1 _conv1 -> 2 `i ]
-"138
-[; ;Lab02.c: 138:       conv2 = (adc2 / (float) 255)*5;
-[e = _conv2 * / -> -> _adc2 `i `f -> -> 255 `i `f -> -> 5 `i `f ]
 "139
-[; ;Lab02.c: 139:       convert(sensor2, conv2, 2);
-[e ( _convert (3 , , &U _sensor2 _conv2 -> 2 `i ]
+[; ;Lab02.c: 139:       convert(sensor1, conv1, 2);
+[e ( _convert (3 , , &U _sensor1 _conv1 -> 2 `i ]
 "141
-[; ;Lab02.c: 141:       convert(cont1, contador, 2);
-[e ( _convert (3 , , &U _cont1 -> _contador `f -> 2 `i ]
-"143
-[; ;Lab02.c: 143:       _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Lab02.c: 141:       conv2 = (adc2 / (float) 255)*5;
+[e = _conv2 * / -> -> _adc2 `i `f -> -> 255 `i `f -> -> 5 `i `f ]
+"142
+[; ;Lab02.c: 142:       convert(sensor2, conv2, 2);
+[e ( _convert (3 , , &U _sensor2 _conv2 -> 2 `i ]
 "144
-[; ;Lab02.c: 144:   }
+[; ;Lab02.c: 144:       convert(cont1, contador, 2);
+[e ( _convert (3 , , &U _cont1 -> _contador `f -> 2 `i ]
+"146
+[; ;Lab02.c: 146:       _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"147
+[; ;Lab02.c: 147:   }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"145
-[; ;Lab02.c: 145:     return;
+"148
+[; ;Lab02.c: 148:     return;
 [e $UE 143  ]
-"146
-[; ;Lab02.c: 146: }
+"149
+[; ;Lab02.c: 149: }
 [e :UE 143 ]
 }
-"148
-[; ;Lab02.c: 148: void setup(void) {
+"151
+[; ;Lab02.c: 151: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"150
-[; ;Lab02.c: 150:     ANSEL = 0X03;
-[e = _ANSEL -> -> 3 `i `uc ]
-"151
-[; ;Lab02.c: 151:     ANSELH = 0X00;
-[e = _ANSELH -> -> 0 `i `uc ]
 "153
-[; ;Lab02.c: 153:     TRISB = 0X00;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;Lab02.c: 153:     ANSEL = 0X03;
+[e = _ANSEL -> -> 3 `i `uc ]
 "154
-[; ;Lab02.c: 154:     TRISCbits.TRISC0 = 0;
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-"155
-[; ;Lab02.c: 155:     TRISCbits.TRISC1 = 0;
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;Lab02.c: 154:     ANSELH = 0X00;
+[e = _ANSELH -> -> 0 `i `uc ]
+"156
+[; ;Lab02.c: 156:     TRISB = 0X00;
+[e = _TRISB -> -> 0 `i `uc ]
 "157
-[; ;Lab02.c: 157:     TRISA = 0X03;
-[e = _TRISA -> -> 3 `i `uc ]
-"159
-[; ;Lab02.c: 159:     PORTA = 0X00;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;Lab02.c: 157:     TRISCbits.TRISC0 = 0;
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+"158
+[; ;Lab02.c: 158:     TRISCbits.TRISC1 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
 "160
-[; ;Lab02.c: 160:     PORTB = 0X00;
+[; ;Lab02.c: 160:     TRISA = 0X03;
+[e = _TRISA -> -> 3 `i `uc ]
+"162
+[; ;Lab02.c: 162:     PORTA = 0X00;
+[e = _PORTA -> -> 0 `i `uc ]
+"163
+[; ;Lab02.c: 163:     PORTB = 0X00;
 [e = _PORTB -> -> 0 `i `uc ]
-"161
-[; ;Lab02.c: 161:     PORTC = 0X00;
-[e = _PORTC -> -> 0 `i `uc ]
 "164
-[; ;Lab02.c: 164:     OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"165
-[; ;Lab02.c: 165:     OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"166
-[; ;Lab02.c: 166:     OSCCONbits.IRCF0 = 1;
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
+[; ;Lab02.c: 164:     PORTC = 0X00;
+[e = _PORTC -> -> 0 `i `uc ]
 "167
-[; ;Lab02.c: 167:     OSCCONbits.SCS = 1;
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+[; ;Lab02.c: 167:     OSCCONbits.IRCF2 = 1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"168
+[; ;Lab02.c: 168:     OSCCONbits.IRCF1 = 1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"169
+[; ;Lab02.c: 169:     OSCCONbits.IRCF0 = 1;
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
 "170
-[; ;Lab02.c: 170:     INTCONbits.GIE = 1;
+[; ;Lab02.c: 170:     OSCCONbits.SCS = 1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+"173
+[; ;Lab02.c: 173:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"171
-[; ;Lab02.c: 171:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"172
-[; ;Lab02.c: 172:     PIE1bits.ADIE = 1;
-[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
 "174
-[; ;Lab02.c: 174:     PIR1bits.RCIF = 0;
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;Lab02.c: 174:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"175
+[; ;Lab02.c: 175:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
 "177
-[; ;Lab02.c: 177:     ADCON1bits.ADFM = 0;
+[; ;Lab02.c: 177:     PIR1bits.RCIF = 0;
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"180
+[; ;Lab02.c: 180:     ADCON1bits.ADFM = 0;
 [e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
-"178
-[; ;Lab02.c: 178:     ADCON1bits.VCFG0 = 0;
-[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
-"179
-[; ;Lab02.c: 179:     ADCON1bits.VCFG1 = 0;
-[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
 "181
-[; ;Lab02.c: 181:     ADCON0bits.ADCS1 = 1;
-[e = . . _ADCON0bits 1 7 -> -> 1 `i `uc ]
+[; ;Lab02.c: 181:     ADCON1bits.VCFG0 = 0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
 "182
-[; ;Lab02.c: 182:     ADCON0bits.CHS = 0;
-[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
-"183
-[; ;Lab02.c: 183:     _delay((unsigned long)((200)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;Lab02.c: 182:     ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
 "184
-[; ;Lab02.c: 184:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;Lab02.c: 184:     ADCON0bits.ADCS1 = 1;
+[e = . . _ADCON0bits 1 7 -> -> 1 `i `uc ]
 "185
-[; ;Lab02.c: 185:     _delay((unsigned long)((200)*(8000000/4000000.0)));
+[; ;Lab02.c: 185:     ADCON0bits.CHS = 0;
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+"186
+[; ;Lab02.c: 186:     _delay((unsigned long)((200)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"187
+[; ;Lab02.c: 187:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
 "188
-[; ;Lab02.c: 188:     TXSTAbits.SYNC = 0;
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"189
-[; ;Lab02.c: 189:     TXSTAbits.BRGH = 1;
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+[; ;Lab02.c: 188:     _delay((unsigned long)((200)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "191
-[; ;Lab02.c: 191:     BAUDCTLbits.BRG16 = 1;
-[e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
-"193
-[; ;Lab02.c: 193:     SPBRG = 207;
-[e = _SPBRG -> -> 207 `i `uc ]
+[; ;Lab02.c: 191:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"192
+[; ;Lab02.c: 192:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
 "194
-[; ;Lab02.c: 194:     SPBRGH = 0;
-[e = _SPBRGH -> -> 0 `i `uc ]
+[; ;Lab02.c: 194:     BAUDCTLbits.BRG16 = 1;
+[e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
 "196
-[; ;Lab02.c: 196:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+[; ;Lab02.c: 196:     SPBRG = 207;
+[e = _SPBRG -> -> 207 `i `uc ]
 "197
-[; ;Lab02.c: 197:     RCSTAbits.RX9 = 0;
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"198
-[; ;Lab02.c: 198:     RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;Lab02.c: 197:     SPBRGH = 0;
+[e = _SPBRGH -> -> 0 `i `uc ]
+"199
+[; ;Lab02.c: 199:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
 "200
-[; ;Lab02.c: 200:     TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"202
-[; ;Lab02.c: 202:     return;
-[e $UE 150  ]
+[; ;Lab02.c: 200:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"201
+[; ;Lab02.c: 201:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
 "203
-[; ;Lab02.c: 203: }
+[; ;Lab02.c: 203:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"205
+[; ;Lab02.c: 205:     return;
+[e $UE 150  ]
+"206
+[; ;Lab02.c: 206: }
 [e :UE 150 ]
 }
-"205
-[; ;Lab02.c: 205: void putch(char data){
+"208
+[; ;Lab02.c: 208: void putch(char data){
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"206
-[; ;Lab02.c: 206:     while (TXIF == 0);
+"209
+[; ;Lab02.c: 209:     while (TXIF == 0);
 [e $U 152  ]
 [e :U 153 ]
 [e :U 152 ]
 [e $ == -> _TXIF `i -> 0 `i 153  ]
 [e :U 154 ]
-"207
-[; ;Lab02.c: 207:     TXREG = data;
+"210
+[; ;Lab02.c: 210:     TXREG = data;
 [e = _TXREG -> _data `uc ]
-"208
-[; ;Lab02.c: 208:     return;
+"211
+[; ;Lab02.c: 211:     return;
 [e $UE 151  ]
-"209
-[; ;Lab02.c: 209: }
+"212
+[; ;Lab02.c: 212: }
 [e :UE 151 ]
 }
-"211
-[; ;Lab02.c: 211: void Eusart(void) {
+"214
+[; ;Lab02.c: 214: void Eusart(void) {
 [v _Eusart `(v ~T0 @X0 1 ef ]
 {
 [e :U _Eusart ]
 [f ]
-"212
-[; ;Lab02.c: 212:    _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"213
-[; ;Lab02.c: 213:    printf("\rSensor 1: \r");
-[e ( _printf :s 6C ]
-"214
-[; ;Lab02.c: 214:    _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "215
-[; ;Lab02.c: 215:    printf(sensor1);
-[e ( _printf -> &U _sensor1 `*Cuc ]
+[; ;Lab02.c: 215:    _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "216
-[; ;Lab02.c: 216:    _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Lab02.c: 216:    printf("\rSensor 1: \r");
+[e ( _printf :s 6C ]
 "217
-[; ;Lab02.c: 217:    printf("\r---------------\r");
-[e ( _printf :s 7C ]
+[; ;Lab02.c: 217:    _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"218
+[; ;Lab02.c: 218:    printf(sensor1);
+[e ( _printf -> &U _sensor1 `*Cuc ]
+"219
+[; ;Lab02.c: 219:    _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "220
-[; ;Lab02.c: 220:    _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"221
-[; ;Lab02.c: 221:    printf("\rSensor 2: \r");
-[e ( _printf :s 8C ]
-"222
-[; ;Lab02.c: 222:    _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Lab02.c: 220:    printf("\r---------------\r");
+[e ( _printf :s 7C ]
 "223
-[; ;Lab02.c: 223:    printf(sensor2);
-[e ( _printf -> &U _sensor2 `*Cuc ]
-"224
-[; ;Lab02.c: 224:    _delay((unsigned long)((100)*(8000000/4000.0)));
+[; ;Lab02.c: 223:    _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"224
+[; ;Lab02.c: 224:    printf("\rSensor 2: \r");
+[e ( _printf :s 8C ]
 "225
-[; ;Lab02.c: 225:    printf("\r---------------\r");
-[e ( _printf :s 9C ]
+[; ;Lab02.c: 225:    _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"226
+[; ;Lab02.c: 226:    printf(sensor2);
+[e ( _printf -> &U _sensor2 `*Cuc ]
 "227
 [; ;Lab02.c: 227:    _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "228
-[; ;Lab02.c: 228:    printf("\rContador: \r");
-[e ( _printf :s 10C ]
-"229
-[; ;Lab02.c: 229:    _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Lab02.c: 228:    printf("\r---------------\r");
+[e ( _printf :s 9C ]
 "230
-[; ;Lab02.c: 230:    printf(cont1);
-[e ( _printf -> &U _cont1 `*Cuc ]
-"231
-[; ;Lab02.c: 231:    _delay((unsigned long)((100)*(8000000/4000.0)));
+[; ;Lab02.c: 230:    _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"231
+[; ;Lab02.c: 231:    printf("\rContador: \r");
+[e ( _printf :s 10C ]
 "232
-[; ;Lab02.c: 232:    printf("\r---------------\r");
-[e ( _printf :s 11C ]
+[; ;Lab02.c: 232:    _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"233
+[; ;Lab02.c: 233:    printf(cont1);
+[e ( _printf -> &U _cont1 `*Cuc ]
 "234
-[; ;Lab02.c: 234:    if (RCREG == '+') {
+[; ;Lab02.c: 234:    _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"235
+[; ;Lab02.c: 235:    printf("\r---------------\r");
+[e ( _printf :s 11C ]
+"237
+[; ;Lab02.c: 237:    if (RCREG == '+') {
 [e $ ! == -> _RCREG `ui -> 43 `ui 156  ]
 {
-"235
-[; ;Lab02.c: 235:        contador++;
+"238
+[; ;Lab02.c: 238:        contador++;
 [e ++ _contador -> -> 1 `i `Vuc ]
-"236
-[; ;Lab02.c: 236:        RCREG = 0;
+"239
+[; ;Lab02.c: 239:        RCREG = 0;
 [e = _RCREG -> -> 0 `i `uc ]
-"237
-[; ;Lab02.c: 237:    }
+"240
+[; ;Lab02.c: 240:    }
 }
 [e $U 157  ]
-"238
-[; ;Lab02.c: 238:    else if (RCREG == '-') {
+"241
+[; ;Lab02.c: 241:    else if (RCREG == '-') {
 [e :U 156 ]
 [e $ ! == -> _RCREG `ui -> 45 `ui 158  ]
 {
-"239
-[; ;Lab02.c: 239:        contador--;
-[e -- _contador -> -> 1 `i `Vuc ]
-"240
-[; ;Lab02.c: 240:        RCREG = 0;
-[e = _RCREG -> -> 0 `i `uc ]
-"241
-[; ;Lab02.c: 241:    }
-}
-[e $U 159  ]
 "242
-[; ;Lab02.c: 242:    else {
-[e :U 158 ]
-{
+[; ;Lab02.c: 242:        contador--;
+[e -- _contador -> -> 1 `i `Vuc ]
 "243
-[; ;Lab02.c: 243:        (0);
-[e -> 0 `i ]
+[; ;Lab02.c: 243:        RCREG = 0;
+[e = _RCREG -> -> 0 `i `uc ]
 "244
 [; ;Lab02.c: 244:    }
 }
+[e $U 159  ]
+"245
+[; ;Lab02.c: 245:    else {
+[e :U 158 ]
+{
+"246
+[; ;Lab02.c: 246:        (0);
+[e -> 0 `i ]
+"247
+[; ;Lab02.c: 247:    }
+}
 [e :U 159 ]
 [e :U 157 ]
-"245
-[; ;Lab02.c: 245:    return;
+"248
+[; ;Lab02.c: 248:    return;
 [e $UE 155  ]
-"246
-[; ;Lab02.c: 246: }
+"249
+[; ;Lab02.c: 249: }
 [e :UE 155 ]
 }
 [p f _printf 9437696 ]

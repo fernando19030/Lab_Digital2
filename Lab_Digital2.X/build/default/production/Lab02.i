@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Lab02.c" 2
-# 12 "Lab02.c"
+# 15 "Lab02.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2507,7 +2507,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 30 "Lab02.c" 2
+# 33 "Lab02.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2642,7 +2642,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 31 "Lab02.c" 2
+# 34 "Lab02.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2741,7 +2741,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 32 "Lab02.c" 2
+# 35 "Lab02.c" 2
 
 
 
@@ -2777,7 +2777,7 @@ void Lcd_Shift_Left(void);
 
 
 void convert(char *data,float a, int place);
-# 36 "Lab02.c" 2
+# 39 "Lab02.c" 2
 
 
 
