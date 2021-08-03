@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"129 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
+"133 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -53,11 +53,11 @@ SPI_ACTIVE_2_IDLE 64
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"61 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
+"62 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
 [v _isr isr `II(v  1 e 1 0 ]
-"94
+"98
 [v _main main `(v  1 e 1 0 ]
-"117
+"121
 [v _setup setup `(v  1 e 1 0 ]
 "10 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Librerias.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -71,7 +71,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S186 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S185 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -81,14 +81,14 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S195 . 1 `uc 1 . 1 0 :2:0 
+[s S194 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S200 . 1 `S186 1 . 1 0 `S195 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES200  1 e 1 @11 ]
-[s S32 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S199 . 1 `S185 1 . 1 0 `S194 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES199  1 e 1 @11 ]
+[s S22 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -97,21 +97,21 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S40 . 1 `S32 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES40  1 e 1 @12 ]
+[u S30 . 1 `S22 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES30  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S51 . 1 `uc 1 ADON 1 0 :1:0 
+[s S52 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S56 . 1 `uc 1 . 1 0 :1:0 
+[s S57 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -120,17 +120,17 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S65 . 1 `uc 1 . 1 0 :1:0 
+[s S66 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S68 . 1 `uc 1 . 1 0 :1:0 
+[s S69 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S71 . 1 `S51 1 . 1 0 `S56 1 . 1 0 `S65 1 . 1 0 `S68 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES71  1 e 1 @31 ]
+[u S72 . 1 `S52 1 . 1 0 `S57 1 . 1 0 `S66 1 . 1 0 `S69 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES72  1 e 1 @31 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S115 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S114 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -140,13 +140,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S124 . 1 `S115 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES124  1 e 1 @133 ]
+[u S123 . 1 `S114 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES123  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S218 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S217 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -155,22 +155,22 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S226 . 1 `S218 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES226  1 e 1 @140 ]
-[s S160 . 1 `uc 1 SCS 1 0 :1:0 
+[u S225 . 1 `S217 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES225  1 e 1 @140 ]
+[s S159 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S166 . 1 `uc 1 . 1 0 :4:0 
+[s S165 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S171 . 1 `S160 1 . 1 0 `S166 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES171  1 e 1 @143 ]
+[u S170 . 1 `S159 1 . 1 0 `S165 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES170  1 e 1 @143 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
 [s S343 . 1 `uc 1 BF 1 0 :1:0 
@@ -216,21 +216,19 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S383 . 1 `S343 1 . 1 0 `S352 1 . 1 0 `S357 1 . 1 0 `S363 1 . 1 0 `S368 1 . 1 0 `S373 1 . 1 0 `S378 1 . 1 0 ]
 [v _SSPSTATbits SSPSTATbits `VES383  1 e 1 @148 ]
-[s S237 . 1 `uc 1 . 1 0 :4:0 
+[s S236 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S243 . 1 `S237 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES243  1 e 1 @159 ]
+[u S242 . 1 `S236 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES242  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"4277
-[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
 "4457
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4463
@@ -239,15 +237,15 @@ SPI_ACTIVE_2_IDLE 64
 [v _ADC1 ADC1 `uc  1 e 1 0 ]
 "52
 [v _ADC2 ADC2 `uc  1 e 1 0 ]
-"94
+"98
 [v _main main `(v  1 e 1 0 ]
 {
-"113
-} 0
 "117
+} 0
+"121
 [v _setup setup `(v  1 e 1 0 ]
 {
-"157
+"161
 } 0
 "10 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Librerias.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -261,12 +259,12 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1264  1 a 1 3 ]
 "25
 } 0
-"61 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
+"62 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"63
+"64
 [v isr@comando comando `uc  1 a 1 6 ]
-"90
+"94
 } 0
 "32 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Librerias.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]

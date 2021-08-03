@@ -2804,14 +2804,11 @@ void main(void) {
 
     while(1){
 
-        Eusart();
-
        PORTCbits.RC2 = 0;
        _delay((unsigned long)((1)*(8000000/4000.0)));
 
        spiWrite(1);
-       sensor1 = spiRead();
-       PORTB = sensor1;
+       PORTB = spiRead();
 
        _delay((unsigned long)((1)*(8000000/4000.0)));
        PORTCbits.RC2 = 1;
@@ -2820,13 +2817,12 @@ void main(void) {
        _delay((unsigned long)((1)*(8000000/4000.0)));
 
        spiWrite(2);
-       sensor2 = spiRead();
-       PORTD = sensor2;
+       PORTD = spiRead();
 
        _delay((unsigned long)((1)*(8000000/4000.0)));
        PORTCbits.RC2 = 1;
 
-
+       Eusart();
     }
     return;
 }
@@ -2838,9 +2834,9 @@ void setup(void){
     ANSELH = 0x00;
 
     TRISCbits.TRISC2 = 0;
-    TRISCbits.TRISC3 = 0;
-    TRISCbits.TRISC4 = 0;
-    TRISCbits.TRISC5 = 0;
+
+
+
     TRISB = 0x00;
     TRISD = 0x00;
 

@@ -2692,6 +2692,7 @@ char spiRead();
 uint8_t temporal = 0;
 uint8_t ADC1;
 uint8_t ADC2;
+uint8_t comando;
 
 
 
@@ -2701,16 +2702,19 @@ void setup(void);
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
-   if(SSPIF == 1){
+   if(PIR1bits.SSPIF == 1){
        uint8_t comando;
        comando = spiRead();
 
+
        switch(comando) {
            case 1:
+               PORTB++;
                spiWrite(ADC1);
                break;
 
            case 2:
+               PORTD++;
                spiWrite(ADC2);
                break;
        }

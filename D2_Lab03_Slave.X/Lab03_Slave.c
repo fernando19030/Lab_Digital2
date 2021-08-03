@@ -50,6 +50,7 @@
 uint8_t temporal = 0;
 uint8_t ADC1;
 uint8_t ADC2;
+uint8_t comando;
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
@@ -59,16 +60,19 @@ void setup(void);
 // Código de Interrupción 
 //*****************************************************************************
 void __interrupt() isr(void){
-   if(SSPIF == 1){
+   if(PIR1bits.SSPIF == 1){
        uint8_t comando;
        comando = spiRead();
+//       __delay_us(100);
        
        switch(comando) {
            case 1:
+               PORTB++;
                spiWrite(ADC1);
                break;
            
            case 2:
+               PORTD++;
                spiWrite(ADC2);
                break;      
        }
