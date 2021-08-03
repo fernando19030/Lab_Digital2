@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"56 Lab03_Master.c
-[; ;Lab03_Master.c: 56: void setup(void);
+"62 Lab03_Master.c
+[; ;Lab03_Master.c: 62: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "296 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 296:     struct {
@@ -30,8 +30,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "352 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"57 Lab03_Master.c
-[; ;Lab03_Master.c: 57: void Eusart(void);
+"46 ./Librerias.h
+[; ;./Librerias.h: 46: void convert(char *data,float a, int place);
+[v _convert `(v ~T0 @X0 0 ef3`*uc`f`i ]
+"63 Lab03_Master.c
+[; ;Lab03_Master.c: 63: void Eusart(void);
 [v _Eusart `(v ~T0 @X0 0 ef ]
 "3387 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
@@ -56,8 +59,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1602
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"109 Lab03_Master.c
-[; ;Lab03_Master.c: 109:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"128 Lab03_Master.c
+[; ;Lab03_Master.c: 128:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1349 32 33 34 35 36 37 .. ]
 [n E1349 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1357 0 128 .. ]
@@ -410,221 +413,275 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "46 Lab03_Master.c
-[; ;Lab03_Master.c: 46: uint8_t sensor1;
-[v _sensor1 `uc ~T0 @X0 1 e ]
+[; ;Lab03_Master.c: 46: float conv1 = 0;
+[v _conv1 `f ~T0 @X0 1 e ]
+[i _conv1
+-> -> 0 `i `f
+]
 "47
-[; ;Lab03_Master.c: 47: uint8_t sensor2;
-[v _sensor2 `uc ~T0 @X0 1 e ]
+[; ;Lab03_Master.c: 47: float conv2 = 0;
+[v _conv2 `f ~T0 @X0 1 e ]
+[i _conv2
+-> -> 0 `i `f
+]
+"49
+[; ;Lab03_Master.c: 49: char sensor1[10];
+[v _sensor1 `uc ~T0 @X0 -> 10 `i e ]
+"50
+[; ;Lab03_Master.c: 50: char sensor2[10];
+[v _sensor2 `uc ~T0 @X0 -> 10 `i e ]
+"52
+[; ;Lab03_Master.c: 52: volatile uint8_t adc1 = 0;
+[v _adc1 `Vuc ~T0 @X0 1 e ]
+[i _adc1
+-> -> 0 `i `uc
+]
+"53
+[; ;Lab03_Master.c: 53: volatile uint8_t adc2 = 0;
+[v _adc2 `Vuc ~T0 @X0 1 e ]
+[i _adc2
+-> -> 0 `i `uc
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"63
-[; ;Lab03_Master.c: 63: void main(void) {
+"69
+[; ;Lab03_Master.c: 69: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"64
-[; ;Lab03_Master.c: 64:     setup();
+"70
+[; ;Lab03_Master.c: 70:     setup();
 [e ( _setup ..  ]
-"68
-[; ;Lab03_Master.c: 68:     while(1){
+"74
+[; ;Lab03_Master.c: 74:     while(1){
 [e :U 141 ]
 {
-"70
-[; ;Lab03_Master.c: 70:        PORTCbits.RC2 = 0;
-[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
-"71
-[; ;Lab03_Master.c: 71:        _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"73
-[; ;Lab03_Master.c: 73:        spiWrite(1);
-[e ( _spiWrite (1 -> -> 1 `i `uc ]
-"74
-[; ;Lab03_Master.c: 74:        PORTB = spiRead();
-[e = _PORTB -> ( _spiRead ..  `uc ]
 "76
-[; ;Lab03_Master.c: 76:        _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"77
-[; ;Lab03_Master.c: 77:        PORTCbits.RC2 = 1;
-[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-"79
-[; ;Lab03_Master.c: 79:        PORTCbits.RC2 = 0;
+[; ;Lab03_Master.c: 76:        PORTCbits.RC2 = 0;
 [e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+"77
+[; ;Lab03_Master.c: 77:        _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"79
+[; ;Lab03_Master.c: 79:        spiWrite(1);
+[e ( _spiWrite (1 -> -> 1 `i `uc ]
 "80
-[; ;Lab03_Master.c: 80:        _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"82
-[; ;Lab03_Master.c: 82:        spiWrite(2);
-[e ( _spiWrite (1 -> -> 2 `i `uc ]
+[; ;Lab03_Master.c: 80:        PORTB = spiRead();
+[e = _PORTB -> ( _spiRead ..  `uc ]
+"81
+[; ;Lab03_Master.c: 81:        adc1 = PORTB;
+[e = _adc1 _PORTB ]
 "83
-[; ;Lab03_Master.c: 83:        PORTD = spiRead();
-[e = _PORTD -> ( _spiRead ..  `uc ]
-"85
-[; ;Lab03_Master.c: 85:        _delay((unsigned long)((1)*(8000000/4000.0)));
+[; ;Lab03_Master.c: 83:        _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"86
-[; ;Lab03_Master.c: 86:        PORTCbits.RC2 = 1;
+"84
+[; ;Lab03_Master.c: 84:        PORTCbits.RC2 = 1;
 [e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-"88
-[; ;Lab03_Master.c: 88:        Eusart();
-[e ( _Eusart ..  ]
+"86
+[; ;Lab03_Master.c: 86:        PORTCbits.RC2 = 0;
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+"87
+[; ;Lab03_Master.c: 87:        _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "89
-[; ;Lab03_Master.c: 89:     }
+[; ;Lab03_Master.c: 89:        spiWrite(2);
+[e ( _spiWrite (1 -> -> 2 `i `uc ]
+"90
+[; ;Lab03_Master.c: 90:        PORTD = spiRead();
+[e = _PORTD -> ( _spiRead ..  `uc ]
+"91
+[; ;Lab03_Master.c: 91:        adc2 = PORTD;
+[e = _adc2 _PORTD ]
+"93
+[; ;Lab03_Master.c: 93:        _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"94
+[; ;Lab03_Master.c: 94:        PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"97
+[; ;Lab03_Master.c: 97:       conv1 = 0;
+[e = _conv1 -> -> 0 `i `f ]
+"98
+[; ;Lab03_Master.c: 98:       conv2 = 0;
+[e = _conv2 -> -> 0 `i `f ]
+"100
+[; ;Lab03_Master.c: 100:       conv1 = (adc1 / (float) 255)*5;
+[e = _conv1 * / -> -> _adc1 `i `f -> -> 255 `i `f -> -> 5 `i `f ]
+"102
+[; ;Lab03_Master.c: 102:       convert(sensor1, conv1, 2);
+[e ( _convert (3 , , &U _sensor1 _conv1 -> 2 `i ]
+"104
+[; ;Lab03_Master.c: 104:       conv2 = (adc2 / (float) 255)*5;
+[e = _conv2 * / -> -> _adc2 `i `f -> -> 255 `i `f -> -> 5 `i `f ]
+"105
+[; ;Lab03_Master.c: 105:       convert(sensor2, conv2, 2);
+[e ( _convert (3 , , &U _sensor2 _conv2 -> 2 `i ]
+"107
+[; ;Lab03_Master.c: 107:        Eusart();
+[e ( _Eusart ..  ]
+"108
+[; ;Lab03_Master.c: 108:     }
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"90
-[; ;Lab03_Master.c: 90:     return;
+"109
+[; ;Lab03_Master.c: 109:     return;
 [e $UE 139  ]
-"91
-[; ;Lab03_Master.c: 91: }
+"110
+[; ;Lab03_Master.c: 110: }
 [e :UE 139 ]
 }
-"95
-[; ;Lab03_Master.c: 95: void setup(void){
+"114
+[; ;Lab03_Master.c: 114: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"96
-[; ;Lab03_Master.c: 96:     ANSEL = 0x00;
-[e = _ANSEL -> -> 0 `i `uc ]
-"97
-[; ;Lab03_Master.c: 97:     ANSELH = 0x00;
-[e = _ANSELH -> -> 0 `i `uc ]
-"99
-[; ;Lab03_Master.c: 99:     TRISCbits.TRISC2 = 0;
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-"103
-[; ;Lab03_Master.c: 103:     TRISB = 0x00;
-[e = _TRISB -> -> 0 `i `uc ]
-"104
-[; ;Lab03_Master.c: 104:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"106
-[; ;Lab03_Master.c: 106:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"107
-[; ;Lab03_Master.c: 107:     PORTD = 0x00;
-[e = _PORTD -> -> 0 `i `uc ]
-"108
-[; ;Lab03_Master.c: 108:     PORTCbits.RC2 = 1;
-[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-"109
-[; ;Lab03_Master.c: 109:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e ( _spiInit (4 , , , . `E1349 0 . `E1357 0 . `E1361 1 . `E1365 0 ]
-"112
-[; ;Lab03_Master.c: 112:     OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"113
-[; ;Lab03_Master.c: 113:     OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"114
-[; ;Lab03_Master.c: 114:     OSCCONbits.IRCF0 = 1;
-[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
 "115
-[; ;Lab03_Master.c: 115:     OSCCONbits.SCS = 1;
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+[; ;Lab03_Master.c: 115:     ANSEL = 0x00;
+[e = _ANSEL -> -> 0 `i `uc ]
+"116
+[; ;Lab03_Master.c: 116:     ANSELH = 0x00;
+[e = _ANSELH -> -> 0 `i `uc ]
 "118
-[; ;Lab03_Master.c: 118:     TXSTAbits.SYNC = 0;
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"119
-[; ;Lab03_Master.c: 119:     TXSTAbits.BRGH = 1;
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"121
-[; ;Lab03_Master.c: 121:     BAUDCTLbits.BRG16 = 1;
-[e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
+[; ;Lab03_Master.c: 118:     TRISCbits.TRISC2 = 0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"122
+[; ;Lab03_Master.c: 122:     TRISB = 0x00;
+[e = _TRISB -> -> 0 `i `uc ]
 "123
-[; ;Lab03_Master.c: 123:     SPBRG = 207;
-[e = _SPBRG -> -> 207 `i `uc ]
-"124
-[; ;Lab03_Master.c: 124:     SPBRGH = 0;
-[e = _SPBRGH -> -> 0 `i `uc ]
+[; ;Lab03_Master.c: 123:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+"125
+[; ;Lab03_Master.c: 125:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
 "126
-[; ;Lab03_Master.c: 126:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+[; ;Lab03_Master.c: 126:     PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
 "127
-[; ;Lab03_Master.c: 127:     RCSTAbits.RX9 = 0;
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+[; ;Lab03_Master.c: 127:     PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
 "128
-[; ;Lab03_Master.c: 128:     RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"130
-[; ;Lab03_Master.c: 130:     TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+[; ;Lab03_Master.c: 128:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[e ( _spiInit (4 , , , . `E1349 0 . `E1357 0 . `E1361 1 . `E1365 0 ]
+"131
+[; ;Lab03_Master.c: 131:     OSCCONbits.IRCF2 = 1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
 "132
-[; ;Lab03_Master.c: 132: }
+[; ;Lab03_Master.c: 132:     OSCCONbits.IRCF1 = 1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"133
+[; ;Lab03_Master.c: 133:     OSCCONbits.IRCF0 = 1;
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
+"134
+[; ;Lab03_Master.c: 134:     OSCCONbits.SCS = 1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+"137
+[; ;Lab03_Master.c: 137:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"138
+[; ;Lab03_Master.c: 138:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"140
+[; ;Lab03_Master.c: 140:     BAUDCTLbits.BRG16 = 1;
+[e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
+"142
+[; ;Lab03_Master.c: 142:     SPBRG = 207;
+[e = _SPBRG -> -> 207 `i `uc ]
+"143
+[; ;Lab03_Master.c: 143:     SPBRGH = 0;
+[e = _SPBRGH -> -> 0 `i `uc ]
+"145
+[; ;Lab03_Master.c: 145:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"146
+[; ;Lab03_Master.c: 146:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"147
+[; ;Lab03_Master.c: 147:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"149
+[; ;Lab03_Master.c: 149:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"151
+[; ;Lab03_Master.c: 151: }
 [e :UE 143 ]
 }
-"134
-[; ;Lab03_Master.c: 134: void putch(char data){
+"153
+[; ;Lab03_Master.c: 153: void putch(char data){
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"135
-[; ;Lab03_Master.c: 135:     while (TXIF == 0);
+"154
+[; ;Lab03_Master.c: 154:     while (TXIF == 0);
 [e $U 145  ]
 [e :U 146 ]
 [e :U 145 ]
 [e $ == -> _TXIF `i -> 0 `i 146  ]
 [e :U 147 ]
-"136
-[; ;Lab03_Master.c: 136:     TXREG = data;
+"155
+[; ;Lab03_Master.c: 155:     TXREG = data;
 [e = _TXREG -> _data `uc ]
-"137
-[; ;Lab03_Master.c: 137:     return;
+"156
+[; ;Lab03_Master.c: 156:     return;
 [e $UE 144  ]
-"138
-[; ;Lab03_Master.c: 138: }
+"157
+[; ;Lab03_Master.c: 157: }
 [e :UE 144 ]
 }
-"140
-[; ;Lab03_Master.c: 140: void Eusart (void) {
+"159
+[; ;Lab03_Master.c: 159: void Eusart (void) {
 [v _Eusart `(v ~T0 @X0 1 ef ]
 {
 [e :U _Eusart ]
 [f ]
-"141
-[; ;Lab03_Master.c: 141:     _delay((unsigned long)((100)*(8000000/4000.0)));
+"160
+[; ;Lab03_Master.c: 160:     _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"142
-[; ;Lab03_Master.c: 142:    printf("\rSensor 1: \r");
+"161
+[; ;Lab03_Master.c: 161:    printf("\rSensor 1: \r");
 [e ( _printf :s 1C ]
-"143
-[; ;Lab03_Master.c: 143:    _delay((unsigned long)((100)*(8000000/4000.0)));
+"162
+[; ;Lab03_Master.c: 162:    _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"145
-[; ;Lab03_Master.c: 145:    _delay((unsigned long)((100)*(8000000/4000.0)));
+"163
+[; ;Lab03_Master.c: 163:    printf(sensor1);
+[e ( _printf -> &U _sensor1 `*Cuc ]
+"164
+[; ;Lab03_Master.c: 164:    _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"146
-[; ;Lab03_Master.c: 146:    printf("\r---------------\r");
+"165
+[; ;Lab03_Master.c: 165:    printf("\r---------------\r");
 [e ( _printf :s 2C ]
-"149
-[; ;Lab03_Master.c: 149:    _delay((unsigned long)((100)*(8000000/4000.0)));
+"168
+[; ;Lab03_Master.c: 168:    _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"150
-[; ;Lab03_Master.c: 150:    printf("\rSensor 2: \r");
+"169
+[; ;Lab03_Master.c: 169:    printf("\rSensor 2: \r");
 [e ( _printf :s 3C ]
-"151
-[; ;Lab03_Master.c: 151:    _delay((unsigned long)((100)*(8000000/4000.0)));
+"170
+[; ;Lab03_Master.c: 170:    _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"153
-[; ;Lab03_Master.c: 153:    _delay((unsigned long)((100)*(8000000/4000.0)));
+"171
+[; ;Lab03_Master.c: 171:    printf(sensor2);
+[e ( _printf -> &U _sensor2 `*Cuc ]
+"172
+[; ;Lab03_Master.c: 172:    _delay((unsigned long)((100)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"154
-[; ;Lab03_Master.c: 154:    printf("\r---------------\r");
+"173
+[; ;Lab03_Master.c: 173:    printf("\r---------------\r");
 [e ( _printf :s 4C ]
-"156
-[; ;Lab03_Master.c: 156:    return;
+"175
+[; ;Lab03_Master.c: 175:    return;
 [e $UE 148  ]
-"157
-[; ;Lab03_Master.c: 157: }
+"176
+[; ;Lab03_Master.c: 176: }
 [e :UE 148 ]
 }
-[p f _printf 8388608 ]
+[p f _printf 9437696 ]
 [a 2C 13 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 0 ]
 [a 4C 13 45 45 45 45 45 45 45 45 45 45 45 45 45 45 45 13 0 ]
 [a 3C 13 83 101 110 115 111 114 32 50 58 32 13 0 ]

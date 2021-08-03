@@ -332,11 +332,33 @@ printf(const char * f, ...)
 
  while((c = *f++)) {
 
-
+  if(c != '%')
 
   {
    (putch(c) );
    continue;
+  }
+
+
+
+
+  flag = 0;
+# 661 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
+  switch(c = *f++) {
+
+  case 0:
+   goto alldone;
+# 828 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
+  default:
+
+
+
+
+
+
+   (putch(c) );
+   continue;
+# 848 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
   }
 # 1448 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
   {
@@ -345,7 +367,7 @@ printf(const char * f, ...)
 # 1559 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c90\\common\\doprnt.c"
  }
 
-
+alldone:
 
 
 

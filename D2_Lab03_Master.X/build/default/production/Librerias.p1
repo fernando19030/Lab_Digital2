@@ -437,3 +437,230 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Librerias.c: 51: }
 [e :UE 149 ]
 }
+"53
+[; ;Librerias.c: 53: void convert(char *data,float a, int place)
+[v _convert `(v ~T0 @X0 1 ef3`*uc`f`i ]
+"54
+[; ;Librerias.c: 54: {
+{
+[e :U _convert ]
+"53
+[; ;Librerias.c: 53: void convert(char *data,float a, int place)
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _a `f ~T0 @X0 1 r2 ]
+[v _place `i ~T0 @X0 1 r3 ]
+"54
+[; ;Librerias.c: 54: {
+[f ]
+"55
+[; ;Librerias.c: 55:      int temp=a;
+[v _temp `i ~T0 @X0 1 a ]
+[e = _temp -> _a `i ]
+"56
+[; ;Librerias.c: 56:      float x=0.0;
+[v _x `f ~T0 @X0 1 a ]
+[e = _x -> .0.0 `f ]
+"57
+[; ;Librerias.c: 57:      int digits=0;
+[v _digits `i ~T0 @X0 1 a ]
+[e = _digits -> 0 `i ]
+"58
+[; ;Librerias.c: 58:      int i=0,mu=1;
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[v _mu `i ~T0 @X0 1 a ]
+[e = _mu -> 1 `i ]
+"59
+[; ;Librerias.c: 59:      int j=0;
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+"60
+[; ;Librerias.c: 60:      if(a<0)
+[e $ ! < _a -> -> 0 `i `f 151  ]
+"61
+[; ;Librerias.c: 61:      {
+{
+"62
+[; ;Librerias.c: 62:             a=a*-1;
+[e = _a * _a -> -U -> 1 `i `f ]
+"63
+[; ;Librerias.c: 63:             data[i]='-';
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x -> -> 45 `ui `uc ]
+"64
+[; ;Librerias.c: 64:             i++;
+[e ++ _i -> 1 `i ]
+"65
+[; ;Librerias.c: 65:       }
+}
+[e :U 151 ]
+"67
+[; ;Librerias.c: 67:      while(temp!=0)
+[e $U 152  ]
+[e :U 153 ]
+"68
+[; ;Librerias.c: 68:      {
+{
+"69
+[; ;Librerias.c: 69:          temp=temp/10;
+[e = _temp / _temp -> 10 `i ]
+"70
+[; ;Librerias.c: 70:          digits++;
+[e ++ _digits -> 1 `i ]
+"71
+[; ;Librerias.c: 71:      }
+}
+[e :U 152 ]
+"67
+[; ;Librerias.c: 67:      while(temp!=0)
+[e $ != _temp -> 0 `i 153  ]
+[e :U 154 ]
+"72
+[; ;Librerias.c: 72:      while(digits!=0)
+[e $U 155  ]
+[e :U 156 ]
+"73
+[; ;Librerias.c: 73:      {
+{
+"74
+[; ;Librerias.c: 74:          if(digits==1)mu=1;
+[e $ ! == _digits -> 1 `i 158  ]
+[e = _mu -> 1 `i ]
+[e $U 159  ]
+"75
+[; ;Librerias.c: 75:          else for(j=2;j<=digits;j++)mu=mu*10;
+[e :U 158 ]
+{
+[e = _j -> 2 `i ]
+[e $U 163  ]
+[e :U 160 ]
+[e = _mu * _mu -> 10 `i ]
+[e ++ _j -> 1 `i ]
+[e :U 163 ]
+[e $ <= _j _digits 160  ]
+[e :U 161 ]
+}
+[e :U 159 ]
+"77
+[; ;Librerias.c: 77:          x=a/mu;
+[e = _x / _a -> _mu `f ]
+"78
+[; ;Librerias.c: 78:          a=a-((int)x*mu);
+[e = _a - _a -> * -> _x `i _mu `f ]
+"79
+[; ;Librerias.c: 79:          data[i]=0x30+((int)x);
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x -> + -> 48 `i -> _x `i `uc ]
+"80
+[; ;Librerias.c: 80:          i++;
+[e ++ _i -> 1 `i ]
+"81
+[; ;Librerias.c: 81:          digits--;
+[e -- _digits -> 1 `i ]
+"82
+[; ;Librerias.c: 82:          mu=1;
+[e = _mu -> 1 `i ]
+"83
+[; ;Librerias.c: 83:      }
+}
+[e :U 155 ]
+"72
+[; ;Librerias.c: 72:      while(digits!=0)
+[e $ != _digits -> 0 `i 156  ]
+[e :U 157 ]
+"85
+[; ;Librerias.c: 85:      data[i]='.';
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x -> -> 46 `ui `uc ]
+"86
+[; ;Librerias.c: 86:      i++;
+[e ++ _i -> 1 `i ]
+"87
+[; ;Librerias.c: 87:      digits=0;
+[e = _digits -> 0 `i ]
+"88
+[; ;Librerias.c: 88:      for(j=1;j<=place;j++)mu=mu*10;
+{
+[e = _j -> 1 `i ]
+[e $U 167  ]
+[e :U 164 ]
+[e = _mu * _mu -> 10 `i ]
+[e ++ _j -> 1 `i ]
+[e :U 167 ]
+[e $ <= _j _place 164  ]
+[e :U 165 ]
+}
+"89
+[; ;Librerias.c: 89:      x=(a-(int)a)*mu;
+[e = _x * - _a -> -> _a `i `f -> _mu `f ]
+"90
+[; ;Librerias.c: 90:      a=x;
+[e = _a _x ]
+"91
+[; ;Librerias.c: 91:      temp=a;
+[e = _temp -> _a `i ]
+"92
+[; ;Librerias.c: 92:      x=0.0;
+[e = _x -> .0.0 `f ]
+"93
+[; ;Librerias.c: 93:      mu=1;
+[e = _mu -> 1 `i ]
+"94
+[; ;Librerias.c: 94:      digits=place;
+[e = _digits _place ]
+"95
+[; ;Librerias.c: 95:      while(digits!=0)
+[e $U 168  ]
+[e :U 169 ]
+"96
+[; ;Librerias.c: 96:      {
+{
+"97
+[; ;Librerias.c: 97:          if(digits==1)mu=1;
+[e $ ! == _digits -> 1 `i 171  ]
+[e = _mu -> 1 `i ]
+[e $U 172  ]
+"98
+[; ;Librerias.c: 98:          else for(j=2;j<=digits;j++)mu=mu*10;
+[e :U 171 ]
+{
+[e = _j -> 2 `i ]
+[e $U 176  ]
+[e :U 173 ]
+[e = _mu * _mu -> 10 `i ]
+[e ++ _j -> 1 `i ]
+[e :U 176 ]
+[e $ <= _j _digits 173  ]
+[e :U 174 ]
+}
+[e :U 172 ]
+"100
+[; ;Librerias.c: 100:          x=a/mu;
+[e = _x / _a -> _mu `f ]
+"101
+[; ;Librerias.c: 101:          a=a-((int)x*mu);
+[e = _a - _a -> * -> _x `i _mu `f ]
+"102
+[; ;Librerias.c: 102:          data[i]=0x30+((int)x);
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x -> + -> 48 `i -> _x `i `uc ]
+"103
+[; ;Librerias.c: 103:          i++;
+[e ++ _i -> 1 `i ]
+"104
+[; ;Librerias.c: 104:          digits--;
+[e -- _digits -> 1 `i ]
+"105
+[; ;Librerias.c: 105:          mu=1;
+[e = _mu -> 1 `i ]
+"106
+[; ;Librerias.c: 106:      }
+}
+[e :U 168 ]
+"95
+[; ;Librerias.c: 95:      while(digits!=0)
+[e $ != _digits -> 0 `i 169  ]
+[e :U 170 ]
+"108
+[; ;Librerias.c: 108:     data[i]='\n';
+[e = *U + _data * -> _i `x -> -> # *U _data `i `x -> -> 10 `ui `uc ]
+"109
+[; ;Librerias.c: 109: }
+[e :UE 150 ]
+}

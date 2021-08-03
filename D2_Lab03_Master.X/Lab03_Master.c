@@ -43,8 +43,14 @@
 //*****************************************************************************
 // Variables
 //*****************************************************************************
-uint8_t sensor1;
-uint8_t sensor2;
+float conv1 = 0;
+float conv2 = 0;
+
+char sensor1[10];
+char sensor2[10];
+
+volatile uint8_t adc1 = 0;
+volatile uint8_t adc2 = 0;
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
@@ -72,6 +78,7 @@ void main(void) {
        
        spiWrite(1);
        PORTB = spiRead();
+       adc1 = PORTB;
        
        __delay_ms(1);
        PORTCbits.RC2 = 1;       //Slave Deselect 
@@ -81,9 +88,21 @@ void main(void) {
        
        spiWrite(2);
        PORTD = spiRead();
+       adc2 = PORTD;
        
        __delay_ms(1);
        PORTCbits.RC2 = 1;       //Slave Deselect
+       
+       //Preparación de los sensores para ser mostrados en el LCD
+      conv1 = 0;//se reinicia las cada ves que se inicia el proceso de enviar datos
+      conv2 = 0;//tanto para la LCD como por UART.
+        
+      conv1 = (adc1 / (float) 255)*5; //Se consigue el porcentaje con respecto al valor 
+      //maximo que un puerto puede tener, despues se multiplica por 5 para conocer el voltaje actual del puerto                                          
+      convert(sensor1, conv1, 2);//se convierte el valor actual a un valor ASCII.
+        
+      conv2 = (adc2 / (float) 255)*5; //misma logica que conv0
+      convert(sensor2, conv2, 2);
        
        Eusart();
     }
@@ -141,7 +160,7 @@ void Eusart (void) {
     __delay_ms(100);         //El Eusart
    printf("\rSensor 1: \r");
    __delay_ms(100);
-//   printf(sensor1);
+   printf(sensor1);
    __delay_ms(100);
    printf("\r---------------\r");
    
@@ -149,7 +168,7 @@ void Eusart (void) {
    __delay_ms(100);
    printf("\rSensor 2: \r");
    __delay_ms(100);
-//   printf(sensor2);
+   printf(sensor2);
    __delay_ms(100);
    printf("\r---------------\r");
    

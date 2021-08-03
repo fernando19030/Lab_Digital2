@@ -2781,15 +2781,22 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
+void convert(char *data,float a, int place);
 # 41 "Lab03_Master.c" 2
 
 
 
 
 
-uint8_t sensor1;
-uint8_t sensor2;
-# 56 "Lab03_Master.c"
+float conv1 = 0;
+float conv2 = 0;
+
+char sensor1[10];
+char sensor2[10];
+
+volatile uint8_t adc1 = 0;
+volatile uint8_t adc2 = 0;
+# 62 "Lab03_Master.c"
 void setup(void);
 void Eusart(void);
 void putch(char data);
@@ -2809,6 +2816,7 @@ void main(void) {
 
        spiWrite(1);
        PORTB = spiRead();
+       adc1 = PORTB;
 
        _delay((unsigned long)((1)*(8000000/4000.0)));
        PORTCbits.RC2 = 1;
@@ -2818,9 +2826,21 @@ void main(void) {
 
        spiWrite(2);
        PORTD = spiRead();
+       adc2 = PORTD;
 
        _delay((unsigned long)((1)*(8000000/4000.0)));
        PORTCbits.RC2 = 1;
+
+
+      conv1 = 0;
+      conv2 = 0;
+
+      conv1 = (adc1 / (float) 255)*5;
+
+      convert(sensor1, conv1, 2);
+
+      conv2 = (adc2 / (float) 255)*5;
+      convert(sensor2, conv2, 2);
 
        Eusart();
     }
@@ -2878,7 +2898,7 @@ void Eusart (void) {
     _delay((unsigned long)((100)*(8000000/4000.0)));
    printf("\rSensor 1: \r");
    _delay((unsigned long)((100)*(8000000/4000.0)));
-
+   printf(sensor1);
    _delay((unsigned long)((100)*(8000000/4000.0)));
    printf("\r---------------\r");
 
@@ -2886,7 +2906,7 @@ void Eusart (void) {
    _delay((unsigned long)((100)*(8000000/4000.0)));
    printf("\rSensor 2: \r");
    _delay((unsigned long)((100)*(8000000/4000.0)));
-
+   printf(sensor2);
    _delay((unsigned long)((100)*(8000000/4000.0)));
    printf("\r---------------\r");
 
