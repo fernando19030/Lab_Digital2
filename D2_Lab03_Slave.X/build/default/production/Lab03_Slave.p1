@@ -51,8 +51,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 [p mainexit ]
-"58 Lab03_Slave.c
-[; ;Lab03_Slave.c: 58: void setup(void);
+"54 Lab03_Slave.c
+[; ;Lab03_Slave.c: 54: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
@@ -84,8 +84,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1433
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
 [v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
-"133 Lab03_Slave.c
-[; ;Lab03_Slave.c: 133:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"128 Lab03_Slave.c
+[; ;Lab03_Slave.c: 128:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1292 32 33 34 35 36 37 .. ]
 [n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1300 0 128 .. ]
@@ -149,29 +149,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2991
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2991: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
 [v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
-"21 Lab03_Slave.c
+"17 Lab03_Slave.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
-"22
+"18
 [p x WDTE  =  OFF        ]
-"23
+"19
 [p x PWRTE  =  OFF       ]
-"24
+"20
 [p x MCLRE  =  OFF       ]
-"25
+"21
 [p x CP  =  OFF          ]
-"26
+"22
 [p x CPD  =  OFF         ]
-"27
+"23
 [p x BOREN  =  OFF       ]
-"28
+"24
 [p x IESO  =  OFF        ]
-"29
+"25
 [p x FCMEN  =  OFF       ]
-"30
+"26
 [p x LVP  =  OFF         ]
-"33
+"29
 [p x BOR4V  =  BOR40V    ]
-"34
+"30
 [p x WRT  =  OFF         ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
@@ -407,68 +407,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"50 Lab03_Slave.c
-[; ;Lab03_Slave.c: 50: uint8_t temporal = 0;
+"46 Lab03_Slave.c
+[; ;Lab03_Slave.c: 46: uint8_t temporal = 0;
 [v _temporal `uc ~T0 @X0 1 e ]
 [i _temporal
 -> -> 0 `i `uc
 ]
-"51
-[; ;Lab03_Slave.c: 51: uint8_t ADC1;
+"47
+[; ;Lab03_Slave.c: 47: uint8_t ADC1;
 [v _ADC1 `uc ~T0 @X0 1 e ]
-"52
-[; ;Lab03_Slave.c: 52: uint8_t ADC2;
+"48
+[; ;Lab03_Slave.c: 48: uint8_t ADC2;
 [v _ADC2 `uc ~T0 @X0 1 e ]
-"53
-[; ;Lab03_Slave.c: 53: uint8_t comando;
+"49
+[; ;Lab03_Slave.c: 49: uint8_t comando;
 [v _comando `uc ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"62
-[; ;Lab03_Slave.c: 62: void __attribute__((picinterrupt(("")))) isr(void){
+"58
+[; ;Lab03_Slave.c: 58: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"63
-[; ;Lab03_Slave.c: 63:    if(PIR1bits.SSPIF == 1){
+"59
+[; ;Lab03_Slave.c: 59:    if(PIR1bits.SSPIF == 1){
 [e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 139  ]
 {
-"64
-[; ;Lab03_Slave.c: 64:        uint8_t comando;
+"60
+[; ;Lab03_Slave.c: 60:        uint8_t comando;
 [v _comando `uc ~T0 @X0 1 a ]
-"65
-[; ;Lab03_Slave.c: 65:        comando = spiRead();
+"61
+[; ;Lab03_Slave.c: 61:        comando = spiRead();
 [e = _comando -> ( _spiRead ..  `uc ]
-"68
-[; ;Lab03_Slave.c: 68:        switch(comando) {
+"63
+[; ;Lab03_Slave.c: 63:        switch(comando) {
 [e $U 141  ]
 {
-"69
-[; ;Lab03_Slave.c: 69:            case 1:
+"64
+[; ;Lab03_Slave.c: 64:            case 1:
 [e :U 142 ]
-"70
-[; ;Lab03_Slave.c: 70:                PORTB++;
+"65
+[; ;Lab03_Slave.c: 65:                PORTB++;
 [e ++ _PORTB -> -> 1 `i `Vuc ]
-"71
-[; ;Lab03_Slave.c: 71:                spiWrite(ADC1);
+"66
+[; ;Lab03_Slave.c: 66:                spiWrite(ADC1);
 [e ( _spiWrite (1 -> _ADC1 `uc ]
+"67
+[; ;Lab03_Slave.c: 67:                break;
+[e $U 140  ]
+"69
+[; ;Lab03_Slave.c: 69:            case 2:
+[e :U 143 ]
+"70
+[; ;Lab03_Slave.c: 70:                PORTD++;
+[e ++ _PORTD -> -> 1 `i `Vuc ]
+"71
+[; ;Lab03_Slave.c: 71:                spiWrite(ADC2);
+[e ( _spiWrite (1 -> _ADC2 `uc ]
 "72
 [; ;Lab03_Slave.c: 72:                break;
 [e $U 140  ]
-"74
-[; ;Lab03_Slave.c: 74:            case 2:
-[e :U 143 ]
-"75
-[; ;Lab03_Slave.c: 75:                PORTD++;
-[e ++ _PORTD -> -> 1 `i `Vuc ]
-"76
-[; ;Lab03_Slave.c: 76:                spiWrite(ADC2);
-[e ( _spiWrite (1 -> _ADC2 `uc ]
-"77
-[; ;Lab03_Slave.c: 77:                break;
-[e $U 140  ]
-"78
-[; ;Lab03_Slave.c: 78:        }
+"73
+[; ;Lab03_Slave.c: 73:        }
 }
 [e $U 140  ]
 [e :U 141 ]
@@ -476,201 +476,201 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 143
  140 ]
 [e :U 140 ]
-"80
-[; ;Lab03_Slave.c: 80:        PIR1bits.SSPIF = 0;
+"75
+[; ;Lab03_Slave.c: 75:        PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"81
-[; ;Lab03_Slave.c: 81:     }
+"76
+[; ;Lab03_Slave.c: 76:     }
 }
 [e :U 139 ]
-"83
-[; ;Lab03_Slave.c: 83:    if (PIR1bits.ADIF) {
+"78
+[; ;Lab03_Slave.c: 78:    if (PIR1bits.ADIF) {
 [e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 144  ]
 {
-"84
-[; ;Lab03_Slave.c: 84:         if (ADCON0bits.CHS == 0) {
+"79
+[; ;Lab03_Slave.c: 79:         if (ADCON0bits.CHS == 0) {
 [e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 145  ]
 {
-"85
-[; ;Lab03_Slave.c: 85:             ADC1 = ADRESH;
+"80
+[; ;Lab03_Slave.c: 80:             ADC1 = ADRESH;
 [e = _ADC1 _ADRESH ]
-"86
-[; ;Lab03_Slave.c: 86:         }
+"81
+[; ;Lab03_Slave.c: 81:         }
 }
 [e $U 146  ]
-"88
-[; ;Lab03_Slave.c: 88:         else {
+"83
+[; ;Lab03_Slave.c: 83:         else {
 [e :U 145 ]
 {
-"89
-[; ;Lab03_Slave.c: 89:             ADC2 = ADRESH;
+"84
+[; ;Lab03_Slave.c: 84:             ADC2 = ADRESH;
 [e = _ADC2 _ADRESH ]
-"90
-[; ;Lab03_Slave.c: 90:         }
+"85
+[; ;Lab03_Slave.c: 85:         }
 }
 [e :U 146 ]
-"92
-[; ;Lab03_Slave.c: 92:         PIR1bits.ADIF = 0;
+"87
+[; ;Lab03_Slave.c: 87:         PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"93
-[; ;Lab03_Slave.c: 93:     }
+"88
+[; ;Lab03_Slave.c: 88:     }
 }
 [e :U 144 ]
-"94
-[; ;Lab03_Slave.c: 94: }
+"89
+[; ;Lab03_Slave.c: 89: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"98
-[; ;Lab03_Slave.c: 98: void main(void) {
+"93
+[; ;Lab03_Slave.c: 93: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"99
-[; ;Lab03_Slave.c: 99:     setup();
+"94
+[; ;Lab03_Slave.c: 94:     setup();
 [e ( _setup ..  ]
-"103
-[; ;Lab03_Slave.c: 103:     while(1){
+"98
+[; ;Lab03_Slave.c: 98:     while(1){
 [e :U 149 ]
 {
-"104
-[; ;Lab03_Slave.c: 104:        if (ADCON0bits.GO == 0){
+"99
+[; ;Lab03_Slave.c: 99:        if (ADCON0bits.GO == 0){
 [e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 151  ]
 {
-"105
-[; ;Lab03_Slave.c: 105:             if (ADCON0bits.CHS == 0) {
+"100
+[; ;Lab03_Slave.c: 100:             if (ADCON0bits.CHS == 0) {
 [e $ ! == -> . . _ADCON0bits 0 2 `i -> 0 `i 152  ]
 {
-"106
-[; ;Lab03_Slave.c: 106:                 ADCON0bits.CHS = 1;
+"101
+[; ;Lab03_Slave.c: 101:                 ADCON0bits.CHS = 1;
 [e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
-"107
-[; ;Lab03_Slave.c: 107:             }
+"102
+[; ;Lab03_Slave.c: 102:             }
 }
 [e $U 153  ]
-"108
-[; ;Lab03_Slave.c: 108:             else {
+"103
+[; ;Lab03_Slave.c: 103:             else {
 [e :U 152 ]
 {
-"109
-[; ;Lab03_Slave.c: 109:                 ADCON0bits.CHS = 0;
+"104
+[; ;Lab03_Slave.c: 104:                 ADCON0bits.CHS = 0;
 [e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
-"110
-[; ;Lab03_Slave.c: 110:             }
+"105
+[; ;Lab03_Slave.c: 105:             }
 }
 [e :U 153 ]
-"112
-[; ;Lab03_Slave.c: 112:             _delay((unsigned long)((200)*(8000000/4000000.0)));
+"107
+[; ;Lab03_Slave.c: 107:             _delay((unsigned long)((200)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"113
-[; ;Lab03_Slave.c: 113:             ADCON0bits.GO = 1;
+"108
+[; ;Lab03_Slave.c: 108:             ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"114
-[; ;Lab03_Slave.c: 114:         }
+"109
+[; ;Lab03_Slave.c: 109:         }
 }
 [e :U 151 ]
-"115
-[; ;Lab03_Slave.c: 115:     }
+"110
+[; ;Lab03_Slave.c: 110:     }
 }
 [e :U 148 ]
 [e $U 149  ]
 [e :U 150 ]
-"116
-[; ;Lab03_Slave.c: 116:     return;
+"111
+[; ;Lab03_Slave.c: 111:     return;
 [e $UE 147  ]
-"117
-[; ;Lab03_Slave.c: 117: }
+"112
+[; ;Lab03_Slave.c: 112: }
 [e :UE 147 ]
 }
-"121
-[; ;Lab03_Slave.c: 121: void setup(void){
+"116
+[; ;Lab03_Slave.c: 116: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"122
-[; ;Lab03_Slave.c: 122:     ANSEL = 0x03;
+"117
+[; ;Lab03_Slave.c: 117:     ANSEL = 0x03;
 [e = _ANSEL -> -> 3 `i `uc ]
-"123
-[; ;Lab03_Slave.c: 123:     ANSELH = 0x00;
+"118
+[; ;Lab03_Slave.c: 118:     ANSELH = 0x00;
 [e = _ANSELH -> -> 0 `i `uc ]
-"125
-[; ;Lab03_Slave.c: 125:     TRISA = 0x03;
+"120
+[; ;Lab03_Slave.c: 120:     TRISA = 0x03;
 [e = _TRISA -> -> 3 `i `uc ]
-"126
-[; ;Lab03_Slave.c: 126:     TRISB = 0x00;
+"121
+[; ;Lab03_Slave.c: 121:     TRISB = 0x00;
 [e = _TRISB -> -> 0 `i `uc ]
-"127
-[; ;Lab03_Slave.c: 127:     TRISD = 0x00;
+"122
+[; ;Lab03_Slave.c: 122:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"129
-[; ;Lab03_Slave.c: 129:     PORTB = 0x00;
+"124
+[; ;Lab03_Slave.c: 124:     PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"130
-[; ;Lab03_Slave.c: 130:     PORTD = 0x00;
+"125
+[; ;Lab03_Slave.c: 125:     PORTD = 0x00;
 [e = _PORTD -> -> 0 `i `uc ]
-"132
-[; ;Lab03_Slave.c: 132:     TRISAbits.TRISA5 = 1;
+"127
+[; ;Lab03_Slave.c: 127:     TRISAbits.TRISA5 = 1;
 [e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"133
-[; ;Lab03_Slave.c: 133:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"128
+[; ;Lab03_Slave.c: 128:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _spiInit (4 , , , . `E1292 4 . `E1300 0 . `E1304 1 . `E1308 0 ]
-"136
-[; ;Lab03_Slave.c: 136:     OSCCONbits.IRCF2 = 1;
+"131
+[; ;Lab03_Slave.c: 131:     OSCCONbits.IRCF2 = 1;
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"137
-[; ;Lab03_Slave.c: 137:     OSCCONbits.IRCF1 = 1;
+"132
+[; ;Lab03_Slave.c: 132:     OSCCONbits.IRCF1 = 1;
 [e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"138
-[; ;Lab03_Slave.c: 138:     OSCCONbits.IRCF0 = 1;
+"133
+[; ;Lab03_Slave.c: 133:     OSCCONbits.IRCF0 = 1;
 [e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"139
-[; ;Lab03_Slave.c: 139:     OSCCONbits.SCS = 1;
+"134
+[; ;Lab03_Slave.c: 134:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"142
-[; ;Lab03_Slave.c: 142:     INTCONbits.GIE = 1;
+"137
+[; ;Lab03_Slave.c: 137:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"143
-[; ;Lab03_Slave.c: 143:     INTCONbits.PEIE = 1;
+"138
+[; ;Lab03_Slave.c: 138:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"144
-[; ;Lab03_Slave.c: 144:     PIE1bits.ADIE = 1;
+"139
+[; ;Lab03_Slave.c: 139:     PIE1bits.ADIE = 1;
 [e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"145
-[; ;Lab03_Slave.c: 145:     PIE1bits.SSPIE = 1;
+"140
+[; ;Lab03_Slave.c: 140:     PIE1bits.SSPIE = 1;
 [e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
-"147
-[; ;Lab03_Slave.c: 147:     PIR1bits.ADIF = 0;
+"142
+[; ;Lab03_Slave.c: 142:     PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"148
-[; ;Lab03_Slave.c: 148:     PIR1bits.SSPIF = 0;
+"143
+[; ;Lab03_Slave.c: 143:     PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"151
-[; ;Lab03_Slave.c: 151:     ADCON1bits.ADFM = 0;
+"146
+[; ;Lab03_Slave.c: 146:     ADCON1bits.ADFM = 0;
 [e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
-"152
-[; ;Lab03_Slave.c: 152:     ADCON1bits.VCFG0 = 0;
+"147
+[; ;Lab03_Slave.c: 147:     ADCON1bits.VCFG0 = 0;
 [e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
-"153
-[; ;Lab03_Slave.c: 153:     ADCON1bits.VCFG1 = 0;
+"148
+[; ;Lab03_Slave.c: 148:     ADCON1bits.VCFG1 = 0;
 [e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
-"155
-[; ;Lab03_Slave.c: 155:     ADCON0bits.ADCS1 = 1;
+"150
+[; ;Lab03_Slave.c: 150:     ADCON0bits.ADCS1 = 1;
 [e = . . _ADCON0bits 1 7 -> -> 1 `i `uc ]
-"156
-[; ;Lab03_Slave.c: 156:     ADCON0bits.CHS = 0;
+"151
+[; ;Lab03_Slave.c: 151:     ADCON0bits.CHS = 0;
 [e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
-"157
-[; ;Lab03_Slave.c: 157:     _delay((unsigned long)((200)*(8000000/4000000.0)));
+"152
+[; ;Lab03_Slave.c: 152:     _delay((unsigned long)((200)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"158
-[; ;Lab03_Slave.c: 158:     ADCON0bits.ADON = 1;
+"153
+[; ;Lab03_Slave.c: 153:     ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"159
-[; ;Lab03_Slave.c: 159:     _delay((unsigned long)((200)*(8000000/4000000.0)));
+"154
+[; ;Lab03_Slave.c: 154:     _delay((unsigned long)((200)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"161
-[; ;Lab03_Slave.c: 161: }
+"156
+[; ;Lab03_Slave.c: 156: }
 [e :UE 154 ]
 }

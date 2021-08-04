@@ -1,15 +1,15 @@
-/* 
- * File:   Lab03_Master.c
- * Author: Earst
- *
- * Created on 1 de agosto de 2021, 11:43 AM
- */
-/*
- * Ejemplo de implementación de la comunicación SPI 
- * Código Maestro
- * Created on 10 de febrero de 2020, 03:32 PM
- */
-//*****************************************************************************
+// Archivo:  Lab03_Master.c
+// Dispositivo:	PIC16F887
+// Autor:    Fernando Arribas
+// Compilador:	pic-as (v2.31), MPLABX V5.45
+// 
+// Programa: Comunicacion SPI y Eusart
+//           
+// Hardware: Leds en PORTB
+//           
+//
+// Creado: 01 aug, 2021
+// Ultima modificacion: 04 aug, 2021
 //*****************************************************************************
 // Palabra de configuración
 //*****************************************************************************
@@ -39,7 +39,7 @@
 #include <stdint.h>
 #include <stdio.h>  // Para usar printf
 #include <string.h> // Concatenar
-#include <stdlib.h>
+#include <stdlib.h> //Recibir numeros
 #include "Librerias.h"
 
 //*****************************************************************************
@@ -77,7 +77,7 @@ void putch(char data);
 // Código Principal
 //*****************************************************************************
 void main(void) {
-    setup();
+    setup();    //Configuracion
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
@@ -86,8 +86,8 @@ void main(void) {
        PORTCbits.RC2 = 0;       //Slave Select
        __delay_ms(1);
        
-       spiWrite(1);
-       adc1 = spiRead();
+       spiWrite(1);             //Comando del master al slave
+       adc1 = spiRead();        //Dato del slave
        
        __delay_ms(1);
        PORTCbits.RC2 = 1;       //Slave Deselect 
@@ -102,19 +102,19 @@ void main(void) {
        PORTCbits.RC2 = 1;       //Slave Deselect
        
        //Preparación de los sensores para ser mostrados en el LCD
-      conv1 = 0;//se reinicia las cada ves que se inicia el proceso de enviar datos
-      conv2 = 0;//tanto para la LCD como por UART.
+       conv1 = 0;//se reinicia las cada ves que se inicia el proceso de enviar datos
+       conv2 = 0;//tanto para la LCD como por UART.
         
-      conv1 = (adc1 / (float) 255)*5; //Se consigue el porcentaje con respecto al valor 
-      //maximo que un puerto puede tener, despues se multiplica por 5 para conocer el voltaje actual del puerto                                          
-      convert(sensor1, conv1, 2);//se convierte el valor actual a un valor ASCII.
+       conv1 = (adc1 / (float) 255)*5; //Se consigue el porcentaje con respecto al valor 
+       //maximo que un puerto puede tener, despues se multiplica por 5 para conocer el voltaje actual del puerto                                          
+       convert(sensor1, conv1, 2);//se convierte el valor actual a un valor ASCII.
         
-      conv2 = (adc2 / (float) 255)*5; //misma logica que conv0
-      convert(sensor2, conv2, 2);
+       conv2 = (adc2 / (float) 255)*5; //misma logica que conv0
+       convert(sensor2, conv2, 2);
        
-       Eusart();
+       Eusart();    //LLamamos la comunicacion del Eusart
        
-       PORTB = full;
+       PORTB = full;    //Guardamos le contador en el puerto b
     }
     return;
 }
@@ -126,9 +126,6 @@ void setup(void){
     ANSELH = 0x00;
     
     TRISCbits.TRISC2 = 0;
-//    TRISCbits.TRISC3 = 0;
-//    TRISCbits.TRISC4 = 0;
-//    TRISCbits.TRISC5 = 0;
     TRISB = 0x00;
     TRISD = 0x00;
     
@@ -167,10 +164,10 @@ void putch(char data){
 }
 
 void Eusart (void) {
-    __delay_ms(100);         //El Eusart
-   printf("\rSensor 1: \r");
+    __delay_ms(100);         
+   printf("\rSensor 1: \r"); //Enviamos cadena del caracteres
    __delay_ms(100);
-   printf(sensor1);
+   printf(sensor1);     //Enviamos el valor del ADC convertido
    __delay_ms(100);
    printf("\r---------------\r");
    
@@ -182,8 +179,8 @@ void Eusart (void) {
    __delay_ms(100);
    printf("\r---------------\r");
    
-   printf("Ingresar Centena: Rango(0-2)\r");
-      defensa1:  
+   printf("Ingresar Centena: Rango(0-2)\r");    //Preguntamos la centena del contador
+      defensa1:  //Si el valor es mayor a 2 aplicamos una defensa
        while(RCIF == 0);
         cen = RCREG -48;  
 
@@ -191,8 +188,8 @@ void Eusart (void) {
            goto defensa1;
        }
     
-    printf("Ingresar Decenas: \r");
-      defensa2:
+    printf("Ingresar Decenas: \r"); //Preguntamos la decena
+      defensa2: //Si el valor no es valido aplicamos una defensa
         while(RCIF == 0); 
          dec = RCREG -48; 
 
@@ -202,8 +199,8 @@ void Eusart (void) {
            }
        }
 
-    printf("Ingresar Unidades: \r");
-      defensa3:
+    printf("Ingresar Unidades: \r");    //Preguntamos la unidades
+      defensa3: //Si el valor no es valido aplicamos defensa
        while(RCIF == 0); 
         uni = RCREG - 48;
 
@@ -212,10 +209,10 @@ void Eusart (void) {
                goto defensa3;
            }
        }
-      con = concat(cen, dec);
-      full = concat(con, uni);
+      con = concat(cen, dec);   //Concatenamos los datos de decena y centena
+      full = concat(con, uni);  //Concatenamos los daros de con y unidad
       __delay_ms(250);
-    printf("El numero elegido es: %d", full);
+    printf("El numero elegido es: %d", full);   //mostramos el valor concatenado completo
 }
    
 
@@ -224,21 +221,19 @@ int concat(int a, int b)
  
     char s1[20];
     char s2[20];
-//    char s3[20]
  
-    // Convert both the integers to string
+    // Convertimos ambos integers a string
     sprintf(s1, "%d", a);
     sprintf(s2, "%d", b);
-//    sprintf(s2, "%d", c);
  
-    // Concatenate both strings
+    // Concatenamos ambos strings
     strcat(s1, s2);
  
-    // Convert the concatenated string
-    // to integer
+    // Convertimos los strings concatenados
+    // a integers
     int c = atoi(s1);
  
-    // return the formed integer
+    // regresamos el valor integrer
     return c;
 }
 

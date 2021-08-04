@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"138 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Lab03_Master.c
+"135 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Lab03_Master.c
 [e E1557 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -89,11 +89,11 @@ SPI_ACTIVE_2_IDLE 64
 [v _main main `(v  1 e 1 0 ]
 "124
 [v _setup setup `(v  1 e 1 0 ]
-"163
+"160
 [v _putch putch `(v  1 e 1 0 ]
-"169
+"166
 [v _Eusart Eusart `(v  1 e 1 0 ]
-"222
+"219
 [v _concat concat `(i  1 e 2 0 ]
 "12 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Librerias.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -322,7 +322,7 @@ SPI_ACTIVE_2_IDLE 64
 "124 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Lab03_Master.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"161
+"158
 } 0
 "12 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Librerias.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -487,10 +487,10 @@ SPI_ACTIVE_2_IDLE 64
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"169 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Lab03_Master.c
+"166 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Lab03_Master.c
 [v _Eusart Eusart `(v  1 e 1 0 ]
 {
-"219
+"216
 } 0
 "13 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -504,19 +504,19 @@ SPI_ACTIVE_2_IDLE 64
 [v printf@f f `*.26DCuc  1 p 2 13 ]
 "28
 } 0
-"222 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Lab03_Master.c
+"219 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Lab03_Master.c
 [v _concat concat `(i  1 e 2 0 ]
 {
-"225
-[v concat@s1 s1 `[20]uc  1 a 20 46 ]
-"226
-[v concat@s2 s2 `[20]uc  1 a 20 26 ]
-"239
-[v concat@c c `i  1 a 2 66 ]
 "222
+[v concat@s1 s1 `[20]uc  1 a 20 46 ]
+"223
+[v concat@s2 s2 `[20]uc  1 a 20 26 ]
+"234
+[v concat@c c `i  1 a 2 66 ]
+"219
 [v concat@a a `i  1 p 2 21 ]
 [v concat@b b `i  1 p 2 23 ]
-"243
+"238
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\strcat.c
 [v _strcat strcat `(*.4uc  1 e 1 0 ]
@@ -567,11 +567,11 @@ SPI_ACTIVE_2_IDLE 64
 [v __doprnt@pb pb `*.4S970  1 a 1 12 ]
 "1567
 } 0
-"163 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Lab03_Master.c
+"160 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Master.X\Lab03_Master.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 p 1 0 ]
-"167
+"164
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]

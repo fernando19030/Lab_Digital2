@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"133 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
+"128 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -53,11 +53,11 @@ SPI_ACTIVE_2_IDLE 64
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"62 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
+"58 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
 [v _isr isr `II(v  1 e 1 0 ]
-"98
+"93
 [v _main main `(v  1 e 1 0 ]
-"121
+"116
 [v _setup setup `(v  1 e 1 0 ]
 "10 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Librerias.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -233,19 +233,19 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4463
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"51 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
+"47 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
 [v _ADC1 ADC1 `uc  1 e 1 0 ]
-"52
+"48
 [v _ADC2 ADC2 `uc  1 e 1 0 ]
-"98
+"93
 [v _main main `(v  1 e 1 0 ]
 {
-"117
+"112
 } 0
-"121
+"116
 [v _setup setup `(v  1 e 1 0 ]
 {
-"161
+"156
 } 0
 "10 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Librerias.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -259,12 +259,12 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1264  1 a 1 3 ]
 "25
 } 0
-"62 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
+"58 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Lab03_Slave.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"64
+"60
 [v isr@comando comando `uc  1 a 1 6 ]
-"94
+"89
 } 0
 "32 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab03_Slave.X\Librerias.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]

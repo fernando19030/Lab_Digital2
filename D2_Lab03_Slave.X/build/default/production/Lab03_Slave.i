@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Lab03_Slave.c" 2
-# 21 "Lab03_Slave.c"
+# 17 "Lab03_Slave.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2510,7 +2510,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 42 "Lab03_Slave.c" 2
+# 38 "Lab03_Slave.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2645,7 +2645,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 43 "Lab03_Slave.c" 2
+# 39 "Lab03_Slave.c" 2
 
 # 1 "./Librerias.h" 1
 # 13 "./Librerias.h"
@@ -2682,7 +2682,7 @@ void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
-# 44 "Lab03_Slave.c" 2
+# 40 "Lab03_Slave.c" 2
 
 
 
@@ -2705,7 +2705,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
    if(PIR1bits.SSPIF == 1){
        uint8_t comando;
        comando = spiRead();
-
 
        switch(comando) {
            case 1:

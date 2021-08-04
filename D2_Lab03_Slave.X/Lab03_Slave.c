@@ -1,19 +1,15 @@
-/* 
- * File:   Lab03_Slave.c
- * Author: Earst
- *
- * Created on 1 de agosto de 2021, 11:58 AM
- */
-
-//*****************************************************************************
-/*
- * File:   main.c
- * Author: Pablo
- * Ejemplo de implementación de la comunicación SPI 
- * Código Esclavo
- * Created on 10 de febrero de 2020, 03:32 PM
- */
-//*****************************************************************************
+// Archivo:  Lab03_Master.c
+// Dispositivo:	PIC16F887
+// Autor:    Fernando Arribas
+// Compilador:	pic-as (v2.31), MPLABX V5.45
+// 
+// Programa: Comunicacion SPI y conversion ADC
+//           
+// Hardware: 2 potenciometros en PORTA
+//           
+//
+// Creado: 01 aug, 2021
+// Ultima modificacion: 04 aug, 2021
 //*****************************************************************************
 // Palabra de configuración
 //*****************************************************************************
@@ -63,15 +59,14 @@ void __interrupt() isr(void){
    if(PIR1bits.SSPIF == 1){
        uint8_t comando;
        comando = spiRead();
-//       __delay_us(100);
        
-       switch(comando) {
-           case 1:
+       switch(comando) { //Verificamos que solicita el master 
+           case 1:  //ADC1
                PORTB++;
                spiWrite(ADC1);
                break;
            
-           case 2:
+           case 2:  //ADC2
                PORTD++;
                spiWrite(ADC2);
                break;      
@@ -122,7 +117,7 @@ void setup(void){
     ANSEL = 0x03;
     ANSELH = 0x00;
     
-    TRISA = 0x03;
+    TRISA = 0x03;   //RA0 y RA1 como entradas analogicas
     TRISB = 0x00;
     TRISD = 0x00;
     

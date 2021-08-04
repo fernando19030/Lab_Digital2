@@ -2956,15 +2956,15 @@ void main(void) {
        PORTCbits.RC2 = 1;
 
 
-      conv1 = 0;
-      conv2 = 0;
+       conv1 = 0;
+       conv2 = 0;
 
-      conv1 = (adc1 / (float) 255)*5;
+       conv1 = (adc1 / (float) 255)*5;
 
-      convert(sensor1, conv1, 2);
+       convert(sensor1, conv1, 2);
 
-      conv2 = (adc2 / (float) 255)*5;
-      convert(sensor2, conv2, 2);
+       conv2 = (adc2 / (float) 255)*5;
+       convert(sensor2, conv2, 2);
 
        Eusart();
 
@@ -2980,9 +2980,6 @@ void setup(void){
     ANSELH = 0x00;
 
     TRISCbits.TRISC2 = 0;
-
-
-
     TRISB = 0x00;
     TRISD = 0x00;
 
@@ -3080,10 +3077,8 @@ int concat(int a, int b)
     char s2[20];
 
 
-
     sprintf(s1, "%d", a);
     sprintf(s2, "%d", b);
-
 
 
     strcat(s1, s2);
