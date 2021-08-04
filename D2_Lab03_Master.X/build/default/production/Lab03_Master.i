@@ -2746,6 +2746,124 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 # 40 "Lab03_Master.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 1 3
+# 14 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 3
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+# 36 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 3
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+# 41 "Lab03_Master.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
+
+
+
+
+
+
+typedef unsigned short wchar_t;
+
+
+
+
+
+
+
+typedef struct {
+ int rem;
+ int quot;
+} div_t;
+typedef struct {
+ unsigned rem;
+ unsigned quot;
+} udiv_t;
+typedef struct {
+ long quot;
+ long rem;
+} ldiv_t;
+typedef struct {
+ unsigned long quot;
+ unsigned long rem;
+} uldiv_t;
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+
+
+
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+
+
+
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+# 104 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 3
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+# 42 "Lab03_Master.c" 2
+
 # 1 "./Librerias.h" 1
 # 13 "./Librerias.h"
 typedef enum
@@ -2782,7 +2900,7 @@ void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
 void convert(char *data,float a, int place);
-# 41 "Lab03_Master.c" 2
+# 43 "Lab03_Master.c" 2
 
 
 
@@ -2796,7 +2914,15 @@ char sensor2[10];
 
 volatile uint8_t adc1 = 0;
 volatile uint8_t adc2 = 0;
-# 62 "Lab03_Master.c"
+
+char pot1, pot2;
+int contador;
+char hundreds, tens, units, residuo;
+char cen, dec, uni;
+char var;
+char con;
+int full;
+# 72 "Lab03_Master.c"
 void setup(void);
 void Eusart(void);
 void putch(char data);
@@ -2815,8 +2941,7 @@ void main(void) {
        _delay((unsigned long)((1)*(8000000/4000.0)));
 
        spiWrite(1);
-       PORTB = spiRead();
-       adc1 = PORTB;
+       adc1 = spiRead();
 
        _delay((unsigned long)((1)*(8000000/4000.0)));
        PORTCbits.RC2 = 1;
@@ -2825,8 +2950,7 @@ void main(void) {
        _delay((unsigned long)((1)*(8000000/4000.0)));
 
        spiWrite(2);
-       PORTD = spiRead();
-       adc2 = PORTD;
+       adc2 = spiRead();
 
        _delay((unsigned long)((1)*(8000000/4000.0)));
        PORTCbits.RC2 = 1;
@@ -2843,6 +2967,8 @@ void main(void) {
       convert(sensor2, conv2, 2);
 
        Eusart();
+
+       PORTB = full;
     }
     return;
 }
@@ -2910,5 +3036,62 @@ void Eusart (void) {
    _delay((unsigned long)((100)*(8000000/4000.0)));
    printf("\r---------------\r");
 
-   return;
+   printf("Ingresar Centena: Rango(0-2)\r");
+      defensa1:
+       while(RCIF == 0);
+        cen = RCREG -48;
+
+       while(RCREG > '2'){
+           goto defensa1;
+       }
+
+    printf("Ingresar Decenas: \r");
+      defensa2:
+        while(RCIF == 0);
+         dec = RCREG -48;
+
+        if(cen == 2){
+           while(RCREG > '5'){
+               goto defensa2;
+           }
+       }
+
+    printf("Ingresar Unidades: \r");
+      defensa3:
+       while(RCIF == 0);
+        uni = RCREG - 48;
+
+       if(cen == 2 && dec == 5){
+           while(RCREG > '5'){
+               goto defensa3;
+           }
+       }
+      con = concat(cen, dec);
+      full = concat(con, uni);
+      _delay((unsigned long)((250)*(8000000/4000.0)));
+    printf("El numero elegido es: %d", full);
+}
+
+
+int concat(int a, int b)
+{
+
+    char s1[20];
+    char s2[20];
+
+
+
+    sprintf(s1, "%d", a);
+    sprintf(s2, "%d", b);
+
+
+
+    strcat(s1, s2);
+
+
+
+    int c = atoi(s1);
+
+
+    return c;
 }

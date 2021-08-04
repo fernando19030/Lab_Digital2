@@ -37,7 +37,9 @@
 //*****************************************************************************
 #include <xc.h>
 #include <stdint.h>
-#include <stdio.h>
+#include <stdio.h>  // Para usar printf
+#include <string.h> // Concatenar
+#include <stdlib.h>
 #include "Librerias.h"
 
 //*****************************************************************************
@@ -51,6 +53,14 @@ char sensor2[10];
 
 volatile uint8_t adc1 = 0;
 volatile uint8_t adc2 = 0;
+
+char pot1, pot2;
+int contador;
+char hundreds, tens, units, residuo;
+char cen, dec, uni;
+char var;
+char con;
+int full;
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
@@ -77,8 +87,7 @@ void main(void) {
        __delay_ms(1);
        
        spiWrite(1);
-       PORTB = spiRead();
-       adc1 = PORTB;
+       adc1 = spiRead();
        
        __delay_ms(1);
        PORTCbits.RC2 = 1;       //Slave Deselect 
@@ -87,8 +96,7 @@ void main(void) {
        __delay_ms(1);
        
        spiWrite(2);
-       PORTD = spiRead();
-       adc2 = PORTD;
+       adc2 = spiRead();
        
        __delay_ms(1);
        PORTCbits.RC2 = 1;       //Slave Deselect
@@ -105,6 +113,8 @@ void main(void) {
       convert(sensor2, conv2, 2);
        
        Eusart();
+       
+       PORTB = full;
     }
     return;
 }
@@ -172,6 +182,63 @@ void Eusart (void) {
    __delay_ms(100);
    printf("\r---------------\r");
    
-   return;
+   printf("Ingresar Centena: Rango(0-2)\r");
+      defensa1:  
+       while(RCIF == 0);
+        cen = RCREG -48;  
+
+       while(RCREG > '2'){ 
+           goto defensa1;
+       }
+    
+    printf("Ingresar Decenas: \r");
+      defensa2:
+        while(RCIF == 0); 
+         dec = RCREG -48; 
+
+        if(cen == 2){
+           while(RCREG > '5'){
+               goto defensa2;
+           }
+       }
+
+    printf("Ingresar Unidades: \r");
+      defensa3:
+       while(RCIF == 0); 
+        uni = RCREG - 48;
+
+       if(cen == 2 && dec == 5){
+           while(RCREG > '5'){
+               goto defensa3;
+           }
+       }
+      con = concat(cen, dec);
+      full = concat(con, uni);
+      __delay_ms(250);
+    printf("El numero elegido es: %d", full);
+}
+   
+
+int concat(int a, int b)
+{
+ 
+    char s1[20];
+    char s2[20];
+//    char s3[20]
+ 
+    // Convert both the integers to string
+    sprintf(s1, "%d", a);
+    sprintf(s2, "%d", b);
+//    sprintf(s2, "%d", c);
+ 
+    // Concatenate both strings
+    strcat(s1, s2);
+ 
+    // Convert the concatenated string
+    // to integer
+    int c = atoi(s1);
+ 
+    // return the formed integer
+    return c;
 }
 
