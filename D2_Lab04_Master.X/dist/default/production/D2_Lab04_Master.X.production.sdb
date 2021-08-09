@@ -59,7 +59,7 @@
 [v _convert convert `(v  1 e 1 0 ]
 "72 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Master.X\Master_I2C.c
 [v _main main `(v  1 e 1 0 ]
-"128
+"139
 [v _setup setup `(v  1 e 1 0 ]
 "228 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
@@ -155,6 +155,8 @@
 [v _lcd1 lcd1 `[10]uc  1 e 10 0 ]
 "56
 [v _lcd2 lcd2 `[10]uc  1 e 10 0 ]
+"57
+[v _lcd3 lcd3 `[10]uc  1 e 10 0 ]
 "59
 [v _conv1 conv1 `f  1 e 4 0 ]
 "60
@@ -162,12 +164,12 @@
 "72
 [v _main main `(v  1 e 1 0 ]
 {
-"124
+"135
 } 0
-"128
+"139
 [v _setup setup `(v  1 e 1 0 ]
 {
-"146
+"157
 } 0
 "27 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Master.X\Librerias.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -192,13 +194,13 @@
 {
 [v convert@data data `*.4uc  1 a 1 wreg ]
 "191
-[v convert@x x `f  1 a 4 5 ]
+[v convert@x x `f  1 a 4 4 ]
 "193
 [v convert@mu mu `i  1 a 2 13 ]
 "192
 [v convert@digits digits `i  1 a 2 11 ]
 "193
-[v convert@i i `i  1 a 2 9 ]
+[v convert@i i `i  1 a 2 8 ]
 "194
 [v convert@j j `i  1 a 2 2 ]
 "190
@@ -208,7 +210,7 @@
 [v convert@a a `f  1 p 4 70 ]
 [v convert@place place `i  1 p 2 74 ]
 "190
-[v convert@data data `*.4uc  1 a 1 4 ]
+[v convert@data data `*.4uc  1 a 1 10 ]
 "244
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c

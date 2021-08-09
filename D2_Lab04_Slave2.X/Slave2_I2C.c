@@ -1,14 +1,14 @@
 /* 
- * File:   Master_I2C.c
+ * File:   Slave2_I2C.c
  * Author: Earst
  *
- * Created on 8 de agosto de 2021, 03:58 PM
+ * Created on 8 de agosto de 2021, 09:42 PM
  */
 
 /*
  * File:   main.c
  * Author: Pablo
- * Ejemplo de uso de I2C Master
+ * Ejemplo de uso de I2C Esclavo
  * Created on 17 de febrero de 2020, 10:32 AM
  */
 //*****************************************************************************
@@ -44,92 +44,80 @@
 // Definición de variables
 //*****************************************************************************
 #define _XTAL_FREQ 8000000
-
-//******************************************************************************
-// Variables
-//****************************************************************************
-volatile uint8_t adc = 0;
-volatile int sensor = 0;
-volatile uint8_t contador = 0;
-
-char lcd1[10];
-char lcd2[10];
-char lcd3[10];
-
-float conv1 = 0;
-float conv2 = 0;
-float conv3 = 0;
+uint8_t z;
+uint8_t dato;
+uint8_t contador;
+uint8_t lec;
 
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
+//*****************************************************************************
+// Código de Interrupción 
+//*****************************************************************************
+void __interrupt() isr(void){
+   if(PIR1bits.SSPIF == 1){ 
 
+        SSPCONbits.CKP = 0;
+       
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;                 // Read the previous value to clear the buffer
+            SSPCONbits.SSPOV = 0;       // Clear the overflow flag
+            SSPCONbits.WCOL = 0;        // Clear the collision bit
+            SSPCONbits.CKP = 1;         // Enables SCL (Clock)
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+            //__delay_us(7);
+            z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
+            //__delay_us(2);
+            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
+            SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
+            while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
+            lec = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
+            __delay_us(250);
+            
+        }
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){ //Escreitura 
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = contador;
+            SSPCONbits.CKP = 1;
+            __delay_us(250);
+            while(SSPSTATbits.BF);
+        }
+       
+        PIR1bits.SSPIF = 0;    
+    }
+   
+   //Interupcion on change del puerto B
+    if (INTCONbits.RBIF == 1){                 //Contador
+        if (PORTBbits.RB0 == 1){              //Verificamos cual boton se presiona
+            contador++;                //Si es RB0 incrementamos
+            contador = contador & 0x0F;
+        }
+        
+        if (PORTBbits.RB1 == 1){              //Si es RB1 decrementamos
+            contador--;
+            contador = contador & 0x0F;
+        }
+        
+        INTCONbits.RBIF = 0;        //Reiniciamos la interupción
+    }
+
+}
 //*****************************************************************************
 // Main
 //*****************************************************************************
 void main(void) {
     setup();
-    Lcd_Init();
-    Lcd_Clear();
+    //*************************************************************************
+    // Loop infinito
+    //*************************************************************************
     while(1){
-        //Primera linea del LCD
-        Lcd_Set_Cursor(1, 1);
-        Lcd_Write_String("ADC");
-        Lcd_Set_Cursor(1, 8);
-        Lcd_Write_String("SEN");
-        Lcd_Set_Cursor(1, 14);
-        Lcd_Write_String("CON");
-        
-        //Lectura Esclavos
-        I2C_Master_Start();
-        I2C_Master_Write(0x51);
-        adc = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        __delay_ms(200);
-        
-        I2C_Master_Start();
-        I2C_Master_Write(0b10000001);
-        sensor = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        __delay_ms(200);
-        
-        I2C_Master_Start();
-        I2C_Master_Write(0x61);
-        contador = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        __delay_ms(200);
-        
-        //Mostramos en el LCD los valores de los sensores
-        Lcd_Set_Cursor(2, 1);             //Elegimos posicion
-        Lcd_Write_String(lcd1);        //Escribimos valor del sensor
-        Lcd_Set_Cursor(2, 5);             //Nueva posicion
-        Lcd_Write_String("V");            //Dimensional del sensor
-        
-        Lcd_Set_Cursor(2, 7);
-        Lcd_Write_String(sensor);
-        Lcd_Set_Cursor(2, 11);
-        Lcd_Write_String("C");
-        
-        Lcd_Set_Cursor(2, 14);
-        Lcd_Write_String(lcd3);
-        
-        //Preparación de los sensores para ser mostrados en el LCD
-        conv1 = 0;//se reinicia las cada ves que se inicia el proceso de enviar datos
-        conv2 = 0;//tanto para la LCD como por UART.
-        
-        conv1 = (adc / (float) 255)*5; //Se consigue el porcentaje con respecto al valor 
-        //maximo que un puerto puede tener, despues se multiplica por 5 para conocer el voltaje actual del puerto                                          
-        convert(lcd1, conv1, 2);//se convierte el valor actual a un valor ASCII.
-        
-        conv2 = (sensor / (float) 255)*5; //misma logica que conv0
-        convert(lcd2, conv2, 2);
-        
-        convert(lcd3, contador, 2);
-        
-        __delay_ms(500);
-
+                       
     }
     return;
 }
@@ -140,18 +128,30 @@ void setup(void){
     ANSEL = 0x00;
     ANSELH = 0x00;
     
-    TRISCbits.TRISC0 = 0;
-    TRISCbits.TRISC1 = 0;
-    TRISB = 0x00;
+    TRISA = 0x00;
+    TRISB = 0x03;
     TRISD = 0x00;
     
+    PORTA = 0x00;
     PORTB = 0x00;
     PORTD = 0x00;
-    I2C_Master_Init(100000);        // Inicializar Comuncación I2C
+    I2C_Slave_Init(0x60);   
     
     //Configuracion del Oscilador
     OSCCONbits.IRCF2 = 1;       //Reloj interno de 8MHz
     OSCCONbits.IRCF1 = 1;
     OSCCONbits.IRCF0 = 1;
     OSCCONbits.SCS   = 1;
+    
+    //Configuracion Interupciones
+    INTCONbits.GIE   = 1;       //Activamos la interupcion on change del PORTB
+    INTCONbits.PEIE  = 1;
+    INTCONbits.RBIE  = 1;
+    
+    INTCONbits.RBIF  = 0;
+    
+    //Configuracion Puerto B
+    IOCBbits.IOCB0   = 1;       //Activamos en RB0 y RB1 la interupcion on change
+    IOCBbits.IOCB1   = 1;
 }
+

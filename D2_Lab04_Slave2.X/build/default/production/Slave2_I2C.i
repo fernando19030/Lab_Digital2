@@ -1,4 +1,4 @@
-# 1 "Master_I2C.c"
+# 1 "Slave2_I2C.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Master_I2C.c" 2
-# 18 "Master_I2C.c"
+# 1 "Slave2_I2C.c" 2
+# 18 "Slave2_I2C.c"
 #pragma config FOSC = EXTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -163,7 +163,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 39 "Master_I2C.c" 2
+# 39 "Slave2_I2C.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f887.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f887.h" 3
@@ -2575,7 +2575,7 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 40 "Master_I2C.c" 2
+# 40 "Slave2_I2C.c" 2
 
 # 1 "./Librerias.h" 1
 # 25 "./Librerias.h"
@@ -2652,7 +2652,7 @@ extern __bank0 __bit __timeout;
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 27 "./Librerias.h" 2
-# 47 "./Librerias.h"
+# 36 "./Librerias.h"
 void I2C_Master_Init(const unsigned long c);
 
 
@@ -2689,42 +2689,17 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
+# 41 "Slave2_I2C.c" 2
 
 
 
-void Lcd_Port(char a);
-
-void Lcd_Cmd(char a);
-
-void Lcd_Clear(void);
-
-void Lcd_Set_Cursor(char a, char b);
-
-void Lcd_Init(void);
-
-void Lcd_Write_Char(char a);
-
-void Lcd_Write_String(char *a);
-
-void Lcd_Shift_Right(void);
-
-void Lcd_Shift_Left(void);
 
 
-void convert(char *data,float a, int place);
-# 41 "Master_I2C.c" 2
-# 51 "Master_I2C.c"
-volatile uint8_t adc = 0;
-volatile int sensor = 0;
-volatile uint8_t contador = 0;
 
-char lcd1[10];
-char lcd2[10];
-char lcd3[10];
-
-float conv1 = 0;
-float conv2 = 0;
-float conv3 = 0;
+uint8_t z;
+uint8_t dato;
+uint8_t contador;
+uint8_t lec;
 
 
 
@@ -2734,67 +2709,66 @@ void setup(void);
 
 
 
+void __attribute__((picinterrupt(("")))) isr(void){
+   if(PIR1bits.SSPIF == 1){
+
+        SSPCONbits.CKP = 0;
+
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;
+            SSPCONbits.SSPOV = 0;
+            SSPCONbits.WCOL = 0;
+            SSPCONbits.CKP = 1;
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+
+            z = SSPBUF;
+
+            PIR1bits.SSPIF = 0;
+            SSPCONbits.CKP = 1;
+            while(!SSPSTATbits.BF);
+            lec = SSPBUF;
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
+
+        }
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = contador;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(8000000/4000000.0)));
+            while(SSPSTATbits.BF);
+        }
+
+        PIR1bits.SSPIF = 0;
+    }
+
+
+    if (INTCONbits.RBIF == 1){
+        if (PORTBbits.RB0 == 1){
+            contador++;
+            contador = contador & 0x0F;
+        }
+
+        if (PORTBbits.RB1 == 1){
+            contador--;
+            contador = contador & 0x0F;
+        }
+
+        INTCONbits.RBIF = 0;
+    }
+
+}
+
+
 
 void main(void) {
     setup();
-    Lcd_Init();
-    Lcd_Clear();
+
+
+
     while(1){
-
-        Lcd_Set_Cursor(1, 1);
-        Lcd_Write_String("ADC");
-        Lcd_Set_Cursor(1, 8);
-        Lcd_Write_String("SEN");
-        Lcd_Set_Cursor(1, 14);
-        Lcd_Write_String("CON");
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x51);
-        adc = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
-        I2C_Master_Start();
-        I2C_Master_Write(0b10000001);
-        sensor = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x61);
-        contador = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-
-
-        Lcd_Set_Cursor(2, 1);
-        Lcd_Write_String(lcd1);
-        Lcd_Set_Cursor(2, 5);
-        Lcd_Write_String("V");
-
-        Lcd_Set_Cursor(2, 7);
-        Lcd_Write_String(sensor);
-        Lcd_Set_Cursor(2, 11);
-        Lcd_Write_String("C");
-
-        Lcd_Set_Cursor(2, 14);
-        Lcd_Write_String(lcd3);
-
-
-        conv1 = 0;
-        conv2 = 0;
-
-        conv1 = (adc / (float) 255)*5;
-
-        convert(lcd1, conv1, 2);
-
-        conv2 = (sensor / (float) 255)*5;
-        convert(lcd2, conv2, 2);
-
-        convert(lcd3, contador, 2);
-
-        _delay((unsigned long)((500)*(8000000/4000.0)));
 
     }
     return;
@@ -2806,18 +2780,29 @@ void setup(void){
     ANSEL = 0x00;
     ANSELH = 0x00;
 
-    TRISCbits.TRISC0 = 0;
-    TRISCbits.TRISC1 = 0;
-    TRISB = 0x00;
+    TRISA = 0x00;
+    TRISB = 0x03;
     TRISD = 0x00;
 
+    PORTA = 0x00;
     PORTB = 0x00;
     PORTD = 0x00;
-    I2C_Master_Init(100000);
+    I2C_Slave_Init(0x60);
 
 
     OSCCONbits.IRCF2 = 1;
     OSCCONbits.IRCF1 = 1;
     OSCCONbits.IRCF0 = 1;
     OSCCONbits.SCS = 1;
+
+
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.RBIE = 1;
+
+    INTCONbits.RBIF = 0;
+
+
+    IOCBbits.IOCB0 = 1;
+    IOCBbits.IOCB1 = 1;
 }
