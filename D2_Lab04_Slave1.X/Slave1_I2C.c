@@ -78,7 +78,8 @@ void __interrupt() isr(void){
             lec = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
             __delay_us(250);
             
-        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+        }
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){ //Escreitura 
             z = SSPBUF;
             BF = 0;
             SSPBUF = adc;
@@ -102,6 +103,7 @@ void __interrupt() isr(void){
 //*****************************************************************************
 void main(void) {
     setup();
+    ADCON0bits.GO   = 1;    //Damos inicio a la conversion
     //*************************************************************************
     // Loop infinito
     //*************************************************************************
@@ -125,6 +127,7 @@ void setup(void){
     TRISB = 0x00;
     TRISD = 0x00;
     
+    PORTA = 0x00;
     PORTB = 0x00;
     PORTD = 0x00;
     I2C_Slave_Init(0x50);   

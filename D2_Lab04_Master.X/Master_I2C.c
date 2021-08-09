@@ -45,6 +45,21 @@
 //*****************************************************************************
 #define _XTAL_FREQ 8000000
 
+//******************************************************************************
+// Variables
+//****************************************************************************
+volatile uint8_t adc = 0;
+volatile int sensor = 0;
+volatile uint8_t contador = 0;
+
+char lcd1[10];
+char lcd2[10];
+char lcd3[10];
+
+float conv1 = 0;
+float conv2 = 0;
+float conv3 = 0;
+
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
@@ -56,19 +71,54 @@ void setup(void);
 //*****************************************************************************
 void main(void) {
     setup();
+    Lcd_Init();
+    Lcd_Clear();
     while(1){
-//        I2C_Master_Start();
-//        I2C_Master_Write(0x50);
-//        I2C_Master_Write(PORTB);
-//        I2C_Master_Stop();
-//        __delay_ms(200);
-//       
+        //Primera linea del LCD
+        Lcd_Set_Cursor(1, 1);
+        Lcd_Write_String("ADC");
+        Lcd_Set_Cursor(1, 8);
+        Lcd_Write_String("SEN");
+        Lcd_Set_Cursor(1, 14);
+        Lcd_Write_String("CON");
+        
+        //Lectura Esclavos
         I2C_Master_Start();
         I2C_Master_Write(0x51);
-        PORTD = I2C_Master_Read(0);
+        adc = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(200);
-//        PORTB++;   
+        
+        I2C_Master_Start();
+        I2C_Master_Write(0b10000001);
+        sensor = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        __delay_ms(200);
+        
+        //Mostramos en el LCD los valores de los sensores
+        Lcd_Set_Cursor(2, 1);             //Elegimos posicion
+        Lcd_Write_String(lcd1);        //Escribimos valor del sensor
+        Lcd_Set_Cursor(2, 5);             //Nueva posicion
+        Lcd_Write_String("V");            //Dimensional del sensor
+        
+        Lcd_Set_Cursor(2, 7);
+        Lcd_Write_String(sensor);
+        Lcd_Set_Cursor(2, 11);
+        Lcd_Write_String("C");
+        
+        //Preparación de los sensores para ser mostrados en el LCD
+        conv1 = 0;//se reinicia las cada ves que se inicia el proceso de enviar datos
+        conv2 = 0;//tanto para la LCD como por UART.
+        
+        conv1 = (adc / (float) 255)*5; //Se consigue el porcentaje con respecto al valor 
+        //maximo que un puerto puede tener, despues se multiplica por 5 para conocer el voltaje actual del puerto                                          
+        convert(lcd1, conv1, 2);//se convierte el valor actual a un valor ASCII.
+        
+        conv2 = (sensor / (float) 255)*5; //misma logica que conv0
+        convert(lcd2, conv2, 2);
+        
+        __delay_ms(500);
+
     }
     return;
 }
@@ -76,12 +126,16 @@ void main(void) {
 // Función de Inicialización
 //*****************************************************************************
 void setup(void){
-    ANSEL = 0;
-    ANSELH = 0;
-    TRISB = 0;
-    TRISD = 0;
-    PORTB = 0;
-    PORTD = 0;
+    ANSEL = 0x00;
+    ANSELH = 0x00;
+    
+    TRISCbits.TRISC0 = 0;
+    TRISCbits.TRISC1 = 0;
+    TRISB = 0x00;
+    TRISD = 0x00;
+    
+    PORTB = 0x00;
+    PORTD = 0x00;
     I2C_Master_Init(100000);        // Inicializar Comuncación I2C
     
     //Configuracion del Oscilador
