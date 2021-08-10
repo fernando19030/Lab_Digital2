@@ -99,10 +99,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
 [v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
 [p mainexit ]
-"56 Slave2_I2C.c
-[; ;Slave2_I2C.c: 56: void setup(void);
+"55 Slave2_I2C.c
+[; ;Slave2_I2C.c: 55: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
-"3387 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+"352 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"3387
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "3449
@@ -123,9 +126,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "228
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"352
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "71 ./Librerias.h
 [; ;./Librerias.h: 71: void I2C_Slave_Init(uint8_t address);
 [v _I2C_Slave_Init `(v ~T0 @X0 0 ef1`uc ]
@@ -159,29 +159,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2436
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2436: extern volatile IOCBbits_t IOCBbits __attribute__((address(0x096)));
 [v _IOCBbits `VS92 ~T0 @X0 0 e@150 ]
-"18 Slave2_I2C.c
-[p x FOSC  =  EXTRC_NOCLKOUT ]
-"19
+"17 Slave2_I2C.c
+[p x FOSC  =  INTRC_NOCLKOUT ]
+"18
 [p x WDTE  =  OFF        ]
-"20
+"19
 [p x PWRTE  =  OFF       ]
-"21
+"20
 [p x MCLRE  =  OFF       ]
-"22
+"21
 [p x CP  =  OFF          ]
-"23
+"22
 [p x CPD  =  OFF         ]
-"24
+"23
 [p x BOREN  =  OFF       ]
-"25
+"24
 [p x IESO  =  OFF        ]
-"26
+"25
 [p x FCMEN  =  OFF       ]
-"27
+"26
 [p x LVP  =  OFF         ]
-"30
+"29
 [p x BOR4V  =  BOR40V    ]
-"31
+"30
 [p x WRT  =  OFF         ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
@@ -417,255 +417,258 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"47 Slave2_I2C.c
-[; ;Slave2_I2C.c: 47: uint8_t z;
+"46 Slave2_I2C.c
+[; ;Slave2_I2C.c: 46: uint8_t z;
 [v _z `uc ~T0 @X0 1 e ]
-"48
-[; ;Slave2_I2C.c: 48: uint8_t dato;
+"47
+[; ;Slave2_I2C.c: 47: uint8_t dato;
 [v _dato `uc ~T0 @X0 1 e ]
-"49
-[; ;Slave2_I2C.c: 49: uint8_t contador;
+"48
+[; ;Slave2_I2C.c: 48: uint8_t contador;
 [v _contador `uc ~T0 @X0 1 e ]
-"50
-[; ;Slave2_I2C.c: 50: uint8_t lec;
+"49
+[; ;Slave2_I2C.c: 49: uint8_t lec;
 [v _lec `uc ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"60
-[; ;Slave2_I2C.c: 60: void __attribute__((picinterrupt(("")))) isr(void){
+"59
+[; ;Slave2_I2C.c: 59: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"61
-[; ;Slave2_I2C.c: 61:    if(PIR1bits.SSPIF == 1){
+"60
+[; ;Slave2_I2C.c: 60:    if(PIR1bits.SSPIF == 1){
 [e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 139  ]
 {
-"63
-[; ;Slave2_I2C.c: 63:         SSPCONbits.CKP = 0;
+"62
+[; ;Slave2_I2C.c: 62:         SSPCONbits.CKP = 0;
 [e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
-"65
-[; ;Slave2_I2C.c: 65:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+"64
+[; ;Slave2_I2C.c: 64:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
 [e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 140  ]
 {
-"66
-[; ;Slave2_I2C.c: 66:             z = SSPBUF;
+"65
+[; ;Slave2_I2C.c: 65:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"67
-[; ;Slave2_I2C.c: 67:             SSPCONbits.SSPOV = 0;
+"66
+[; ;Slave2_I2C.c: 66:             SSPCONbits.SSPOV = 0;
 [e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
-"68
-[; ;Slave2_I2C.c: 68:             SSPCONbits.WCOL = 0;
+"67
+[; ;Slave2_I2C.c: 67:             SSPCONbits.WCOL = 0;
 [e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
-"69
-[; ;Slave2_I2C.c: 69:             SSPCONbits.CKP = 1;
+"68
+[; ;Slave2_I2C.c: 68:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"70
-[; ;Slave2_I2C.c: 70:         }
+"69
+[; ;Slave2_I2C.c: 69:         }
 }
 [e :U 140 ]
-"72
-[; ;Slave2_I2C.c: 72:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+"71
+[; ;Slave2_I2C.c: 71:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 141  ]
 {
-"74
-[; ;Slave2_I2C.c: 74:             z = SSPBUF;
+"73
+[; ;Slave2_I2C.c: 73:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"76
-[; ;Slave2_I2C.c: 76:             PIR1bits.SSPIF = 0;
+"75
+[; ;Slave2_I2C.c: 75:             PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"77
-[; ;Slave2_I2C.c: 77:             SSPCONbits.CKP = 1;
+"76
+[; ;Slave2_I2C.c: 76:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"78
-[; ;Slave2_I2C.c: 78:             while(!SSPSTATbits.BF);
+"77
+[; ;Slave2_I2C.c: 77:             while(!SSPSTATbits.BF);
 [e $U 142  ]
 [e :U 143 ]
 [e :U 142 ]
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 143  ]
 [e :U 144 ]
-"79
-[; ;Slave2_I2C.c: 79:             lec = SSPBUF;
+"78
+[; ;Slave2_I2C.c: 78:             lec = SSPBUF;
 [e = _lec _SSPBUF ]
-"80
-[; ;Slave2_I2C.c: 80:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+"79
+[; ;Slave2_I2C.c: 79:             _delay((unsigned long)((250)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"82
-[; ;Slave2_I2C.c: 82:         }
+"81
+[; ;Slave2_I2C.c: 81:         }
 }
 [e $U 145  ]
-"83
-[; ;Slave2_I2C.c: 83:         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+"82
+[; ;Slave2_I2C.c: 82:         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 [e :U 141 ]
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 146  ]
 {
-"84
-[; ;Slave2_I2C.c: 84:             z = SSPBUF;
+"83
+[; ;Slave2_I2C.c: 83:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"85
-[; ;Slave2_I2C.c: 85:             BF = 0;
+"84
+[; ;Slave2_I2C.c: 84:             BF = 0;
 [e = _BF -> -> 0 `i `b ]
-"86
-[; ;Slave2_I2C.c: 86:             SSPBUF = contador;
+"85
+[; ;Slave2_I2C.c: 85:             SSPBUF = contador;
 [e = _SSPBUF _contador ]
-"87
-[; ;Slave2_I2C.c: 87:             SSPCONbits.CKP = 1;
+"86
+[; ;Slave2_I2C.c: 86:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"88
-[; ;Slave2_I2C.c: 88:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+"87
+[; ;Slave2_I2C.c: 87:             _delay((unsigned long)((250)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"89
-[; ;Slave2_I2C.c: 89:             while(SSPSTATbits.BF);
+"88
+[; ;Slave2_I2C.c: 88:             while(SSPSTATbits.BF);
 [e $U 147  ]
 [e :U 148 ]
 [e :U 147 ]
 [e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 148  ]
 [e :U 149 ]
-"90
-[; ;Slave2_I2C.c: 90:         }
+"89
+[; ;Slave2_I2C.c: 89:         }
 }
 [e :U 146 ]
 [e :U 145 ]
-"92
-[; ;Slave2_I2C.c: 92:         PIR1bits.SSPIF = 0;
+"91
+[; ;Slave2_I2C.c: 91:         PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"93
-[; ;Slave2_I2C.c: 93:     }
+"92
+[; ;Slave2_I2C.c: 92:     }
 }
 [e :U 139 ]
-"96
-[; ;Slave2_I2C.c: 96:     if (INTCONbits.RBIF == 1){
+"95
+[; ;Slave2_I2C.c: 95:     if (INTCONbits.RBIF == 1){
 [e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 150  ]
 {
-"97
-[; ;Slave2_I2C.c: 97:         if (PORTBbits.RB0 == 1){
+"96
+[; ;Slave2_I2C.c: 96:         if (PORTBbits.RB0 == 1){
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 151  ]
 {
-"98
-[; ;Slave2_I2C.c: 98:             contador++;
+"97
+[; ;Slave2_I2C.c: 97:             contador++;
 [e ++ _contador -> -> 1 `i `uc ]
-"99
-[; ;Slave2_I2C.c: 99:             contador = contador & 0x0F;
+"98
+[; ;Slave2_I2C.c: 98:             contador = contador & 0x0F;
 [e = _contador -> & -> _contador `i -> 15 `i `uc ]
-"100
-[; ;Slave2_I2C.c: 100:         }
+"99
+[; ;Slave2_I2C.c: 99:         }
 }
 [e :U 151 ]
-"102
-[; ;Slave2_I2C.c: 102:         if (PORTBbits.RB1 == 1){
+"101
+[; ;Slave2_I2C.c: 101:         if (PORTBbits.RB1 == 1){
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 152  ]
 {
-"103
-[; ;Slave2_I2C.c: 103:             contador--;
+"102
+[; ;Slave2_I2C.c: 102:             contador--;
 [e -- _contador -> -> 1 `i `uc ]
-"104
-[; ;Slave2_I2C.c: 104:             contador = contador & 0x0F;
+"103
+[; ;Slave2_I2C.c: 103:             contador = contador & 0x0F;
 [e = _contador -> & -> _contador `i -> 15 `i `uc ]
-"105
-[; ;Slave2_I2C.c: 105:         }
+"104
+[; ;Slave2_I2C.c: 104:         }
 }
 [e :U 152 ]
-"107
-[; ;Slave2_I2C.c: 107:         INTCONbits.RBIF = 0;
+"106
+[; ;Slave2_I2C.c: 106:         INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"108
-[; ;Slave2_I2C.c: 108:     }
+"107
+[; ;Slave2_I2C.c: 107:     }
 }
 [e :U 150 ]
-"110
-[; ;Slave2_I2C.c: 110: }
+"109
+[; ;Slave2_I2C.c: 109: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"114
-[; ;Slave2_I2C.c: 114: void main(void) {
+"113
+[; ;Slave2_I2C.c: 113: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"115
-[; ;Slave2_I2C.c: 115:     setup();
+"114
+[; ;Slave2_I2C.c: 114:     setup();
 [e ( _setup ..  ]
-"119
-[; ;Slave2_I2C.c: 119:     while(1){
+"118
+[; ;Slave2_I2C.c: 118:     while(1){
 [e :U 155 ]
 {
-"121
-[; ;Slave2_I2C.c: 121:     }
+"119
+[; ;Slave2_I2C.c: 119:        PORTD = contador;
+[e = _PORTD _contador ]
+"120
+[; ;Slave2_I2C.c: 120:     }
 }
 [e :U 154 ]
 [e $U 155  ]
 [e :U 156 ]
-"122
-[; ;Slave2_I2C.c: 122:     return;
+"121
+[; ;Slave2_I2C.c: 121:     return;
 [e $UE 153  ]
-"123
-[; ;Slave2_I2C.c: 123: }
+"122
+[; ;Slave2_I2C.c: 122: }
 [e :UE 153 ]
 }
-"127
-[; ;Slave2_I2C.c: 127: void setup(void){
+"126
+[; ;Slave2_I2C.c: 126: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"128
-[; ;Slave2_I2C.c: 128:     ANSEL = 0x00;
+"127
+[; ;Slave2_I2C.c: 127:     ANSEL = 0x00;
 [e = _ANSEL -> -> 0 `i `uc ]
-"129
-[; ;Slave2_I2C.c: 129:     ANSELH = 0x00;
+"128
+[; ;Slave2_I2C.c: 128:     ANSELH = 0x00;
 [e = _ANSELH -> -> 0 `i `uc ]
-"131
-[; ;Slave2_I2C.c: 131:     TRISA = 0x00;
+"130
+[; ;Slave2_I2C.c: 130:     TRISA = 0x00;
 [e = _TRISA -> -> 0 `i `uc ]
-"132
-[; ;Slave2_I2C.c: 132:     TRISB = 0x03;
+"131
+[; ;Slave2_I2C.c: 131:     TRISB = 0x03;
 [e = _TRISB -> -> 3 `i `uc ]
-"133
-[; ;Slave2_I2C.c: 133:     TRISD = 0x00;
+"132
+[; ;Slave2_I2C.c: 132:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"135
-[; ;Slave2_I2C.c: 135:     PORTA = 0x00;
+"134
+[; ;Slave2_I2C.c: 134:     PORTA = 0x00;
 [e = _PORTA -> -> 0 `i `uc ]
-"136
-[; ;Slave2_I2C.c: 136:     PORTB = 0x00;
+"135
+[; ;Slave2_I2C.c: 135:     PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"137
-[; ;Slave2_I2C.c: 137:     PORTD = 0x00;
+"136
+[; ;Slave2_I2C.c: 136:     PORTD = 0x00;
 [e = _PORTD -> -> 0 `i `uc ]
-"138
-[; ;Slave2_I2C.c: 138:     I2C_Slave_Init(0x60);
+"137
+[; ;Slave2_I2C.c: 137:     I2C_Slave_Init(0x60);
 [e ( _I2C_Slave_Init (1 -> -> 96 `i `uc ]
-"141
-[; ;Slave2_I2C.c: 141:     OSCCONbits.IRCF2 = 1;
+"140
+[; ;Slave2_I2C.c: 140:     OSCCONbits.IRCF2 = 1;
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"142
-[; ;Slave2_I2C.c: 142:     OSCCONbits.IRCF1 = 1;
+"141
+[; ;Slave2_I2C.c: 141:     OSCCONbits.IRCF1 = 1;
 [e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"143
-[; ;Slave2_I2C.c: 143:     OSCCONbits.IRCF0 = 1;
+"142
+[; ;Slave2_I2C.c: 142:     OSCCONbits.IRCF0 = 1;
 [e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"144
-[; ;Slave2_I2C.c: 144:     OSCCONbits.SCS = 1;
+"143
+[; ;Slave2_I2C.c: 143:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"147
-[; ;Slave2_I2C.c: 147:     INTCONbits.GIE = 1;
+"146
+[; ;Slave2_I2C.c: 146:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"148
-[; ;Slave2_I2C.c: 148:     INTCONbits.PEIE = 1;
+"147
+[; ;Slave2_I2C.c: 147:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"149
-[; ;Slave2_I2C.c: 149:     INTCONbits.RBIE = 1;
+"148
+[; ;Slave2_I2C.c: 148:     INTCONbits.RBIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"151
-[; ;Slave2_I2C.c: 151:     INTCONbits.RBIF = 0;
+"150
+[; ;Slave2_I2C.c: 150:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"154
-[; ;Slave2_I2C.c: 154:     IOCBbits.IOCB0 = 1;
+"153
+[; ;Slave2_I2C.c: 153:     IOCBbits.IOCB0 = 1;
 [e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
-"155
-[; ;Slave2_I2C.c: 155:     IOCBbits.IOCB1 = 1;
+"154
+[; ;Slave2_I2C.c: 154:     IOCBbits.IOCB1 = 1;
 [e = . . _IOCBbits 1 1 -> -> 1 `i `uc ]
-"156
-[; ;Slave2_I2C.c: 156: }
+"155
+[; ;Slave2_I2C.c: 155: }
 [e :UE 157 ]
 }

@@ -7,8 +7,8 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Slave1_I2C.c" 2
-# 18 "Slave1_I2C.c"
-#pragma config FOSC = EXTRC_NOCLKOUT
+# 17 "Slave1_I2C.c"
+#pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -163,7 +163,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 39 "Slave1_I2C.c" 2
+# 38 "Slave1_I2C.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f887.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f887.h" 3
@@ -2575,7 +2575,7 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 40 "Slave1_I2C.c" 2
+# 39 "Slave1_I2C.c" 2
 
 # 1 "./Librerias.h" 1
 # 25 "./Librerias.h"
@@ -2689,7 +2689,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 41 "Slave1_I2C.c" 2
+# 40 "Slave1_I2C.c" 2
 
 
 
@@ -2730,7 +2730,8 @@ void __attribute__((picinterrupt(("")))) isr(void){
             lec = SSPBUF;
             _delay((unsigned long)((250)*(8000000/4000000.0)));
 
-        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+        }
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
             SSPBUF = adc;
@@ -2754,6 +2755,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 void main(void) {
     setup();
+    ADCON0bits.GO = 1;
 
 
 
@@ -2777,6 +2779,7 @@ void setup(void){
     TRISB = 0x00;
     TRISD = 0x00;
 
+    PORTA = 0x00;
     PORTB = 0x00;
     PORTD = 0x00;
     I2C_Slave_Init(0x50);

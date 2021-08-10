@@ -17,11 +17,11 @@
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 "100
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
-"60 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Slave2.X\Slave2_I2C.c
+"59 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Slave2.X\Slave2_I2C.c
 [v _isr isr `II(v  1 e 1 0 ]
-"114
+"113
 [v _main main `(v  1 e 1 0 ]
-"127
+"126
 [v _setup setup `(v  1 e 1 0 ]
 "166 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -212,21 +212,21 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"47 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Slave2.X\Slave2_I2C.c
+"46 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Slave2.X\Slave2_I2C.c
 [v _z z `uc  1 e 1 0 ]
-"49
+"48
 [v _contador contador `uc  1 e 1 0 ]
-"50
+"49
 [v _lec lec `uc  1 e 1 0 ]
-"114
+"113
 [v _main main `(v  1 e 1 0 ]
 {
-"123
+"122
 } 0
-"127
+"126
 [v _setup setup `(v  1 e 1 0 ]
 {
-"156
+"155
 } 0
 "100 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Slave2.X\Librerias.c
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
@@ -237,8 +237,8 @@
 [v I2C_Slave_Init@address address `uc  1 a 1 3 ]
 "112
 } 0
-"60 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Slave2.X\Slave2_I2C.c
+"59 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Slave2.X\Slave2_I2C.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"110
+"109
 } 0

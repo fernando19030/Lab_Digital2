@@ -5,12 +5,16 @@
 [d frameptr 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
 "43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "242
@@ -19,6 +23,10 @@
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"13 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\strcat.c
+[v _strcat strcat `(*.4uc  1 e 1 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
@@ -57,13 +65,13 @@
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 "188
 [v _convert convert `(v  1 e 1 0 ]
-"72 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Master.X\Master_I2C.c
+"77 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Master.X\Master_I2C.c
 [v _main main `(v  1 e 1 0 ]
-"139
+"155
 [v _setup setup `(v  1 e 1 0 ]
 "228 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S217 . 1 `uc 1 RC0 1 0 :1:0 
+[s S247 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -73,14 +81,16 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S226 . 1 `S217 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES226  1 e 1 @7 ]
+[u S256 . 1 `S247 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES256  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"1133
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 [s S78 . 1 `uc 1 TRISC0 1 0 :1:0 
@@ -113,7 +123,7 @@
 [v _OSCCONbits OSCCONbits `VES119  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S188 . 1 `uc 1 SEN 1 0 :1:0 
+[s S218 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -123,8 +133,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S197 . 1 `S188 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES197  1 e 1 @145 ]
+[u S227 . 1 `S218 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES227  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
@@ -145,31 +155,33 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"51 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Master.X\Master_I2C.c
+"4544
+[v _TXIF TXIF `VEb  1 e 0 @100 ]
+"53 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Master.X\Master_I2C.c
 [v _adc adc `VEuc  1 e 1 0 ]
-"52
-[v _sensor sensor `VEi  1 e 2 0 ]
-"53
-[v _contador contador `VEuc  1 e 1 0 ]
+"54
+[v _sensor sensor `VEc  1 e 1 0 ]
 "55
-[v _lcd1 lcd1 `[10]uc  1 e 10 0 ]
-"56
-[v _lcd2 lcd2 `[10]uc  1 e 10 0 ]
+[v _contador contador `VEuc  1 e 1 0 ]
 "57
-[v _lcd3 lcd3 `[10]uc  1 e 10 0 ]
+[v _lcd1 lcd1 `[10]uc  1 e 10 0 ]
+"58
+[v _lcd2 lcd2 `[10]uc  1 e 10 0 ]
 "59
+[v _lcd3 lcd3 `[10]uc  1 e 10 0 ]
+"61
 [v _conv1 conv1 `f  1 e 4 0 ]
-"60
+"62
 [v _conv2 conv2 `f  1 e 4 0 ]
-"72
+"77
 [v _main main `(v  1 e 1 0 ]
 {
-"135
+"151
 } 0
-"139
+"155
 [v _setup setup `(v  1 e 1 0 ]
 {
-"157
+"173
 } 0
 "27 C:\Users\Earst\MPLABXProjects\Lab_Digital2\D2_Lab04_Master.X\Librerias.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -274,17 +286,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S594 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S624 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S599 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S602 . 4 `l 1 i 4 0 `d 1 f 4 0 `S594 1 fAsBytes 4 0 `S599 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S602  1 a 4 64 ]
+[s S629 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S632 . 4 `l 1 i 4 0 `d 1 f 4 0 `S624 1 fAsBytes 4 0 `S629 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S632  1 a 4 64 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 58 ]
-[s S671 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S701 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S674 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S671 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S674  1 a 2 68 ]
+[u S704 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S701 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S704  1 a 2 68 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 63 ]
 "11
@@ -354,7 +366,7 @@
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
 "171
-[v Lcd_Write_String@i i `i  1 a 2 5 ]
+[v Lcd_Write_String@i i `i  1 a 2 8 ]
 "170
 [v Lcd_Write_String@a a `*.26uc  1 p 2 3 ]
 "174

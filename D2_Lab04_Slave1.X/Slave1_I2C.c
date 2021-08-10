@@ -1,21 +1,20 @@
-/* 
- * File:   Slave1_I2C.c
- * Author: Earst
- *
- * Created on 8 de agosto de 2021, 04:03 PM
- */
-
-/*
- * File:   main.c
- * Author: Pablo
- * Ejemplo de uso de I2C Esclavo
- * Created on 17 de febrero de 2020, 10:32 AM
- */
+// Archivo:  Slave1_I2C.c
+// Dispositivo:	PIC16F887
+// Autor:    Fernando Arribas
+// Compilador:	pic-as (v2.31), MPLABX V5.45
+// 
+// Programa: Comunicacion I2C y conversion analogica
+//           
+// Hardware: Potenciometros en PORTA
+//           
+//
+// Creado: 08 aug, 2021
+// Ultima modificacion: 09 aug, 2021
 //*****************************************************************************
 // Palabra de configuración
 //*****************************************************************************
 // CONFIG1
-#pragma config FOSC = EXTRC_NOCLKOUT// Oscillator Selection bits (RCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)
+#pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (RCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
