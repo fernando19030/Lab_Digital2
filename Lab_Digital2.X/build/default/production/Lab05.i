@@ -2865,15 +2865,20 @@ extern char * ftoa(float f, int * status);
 
 
 
-uint8_t contador, ada;
+uint8_t contador;
 char cen, dec, uni;
-char var;
-char con;
-int full;
+char ingreso, posicion, ada;
+char entrante [2];
 # 58 "Lab05.c"
 void setup(void);
-void Eusart(void);
-void putch(char data);
+char centenas (int dato);
+char decenas (int dato);
+char unidades (int dato);
+void USART_Tx(char data);
+char USART_Rx(void);
+void USART_Cadena(char *str);
+
+
 
 
 
@@ -2907,11 +2912,42 @@ void main(void) {
 
 
     while(1){
-       PORTD = full;
-       Eusart();
+        cen = centenas(contador);
+        dec = decenas(contador);
+        uni = unidades(contador);
+        cen += 48;
+        dec += 48;
+        uni += 48;
+        if (PIR1bits.RCIF == 1){
+            ingreso = USART_Rx();
+
+            if(ingreso == 's'){
+                USART_Tx(cen);
+                USART_Tx(dec);
+                USART_Tx(uni);
+            }
+
+            if(ingreso > 47 && ingreso < 58){
+                entrante[posicion] = ingreso;
+                posicion++;
+
+                if (posicion > 2){
+                    posicion = 0;
+                    ada = (entrante[0] - 48) * 100;
+                    ada +=(entrante[1] - 48) *10;
+                    ada +=(entrante[2] - 48);
+                    PORTD = ada;
+
+                }
+            }
+       }
+        ingreso = 0;
     }
     return;
-}
+
+
+
+    }
 
 
 
@@ -2960,73 +2996,35 @@ void setup(void){
     TXSTAbits.TXEN = 1;
 }
 
-void putch(char data){
-    while (TXIF == 0);
+char centenas (int dato){
+    char out = dato / 100;
+    return out;
+}
+
+char decenas (int dato){
+    char out;
+    out = (dato % 100) / 10;
+    return out;
+}
+
+char unidades (int dato){
+    char out;
+    out = (dato % 100) % 10;
+    return out;
+}
+
+void USART_Tx(char data){
+    while(TXSTAbits.TRMT == 0);
     TXREG = data;
-    return;
 }
 
-void Eusart (void) {
-    printf("\r------------------------\r");
-    printf("Valor del Contador: ");
-    _delay((unsigned long)((1000)*(8000000/4000.0)));
-    printf("%d",contador);
-    printf("\r------------------------\r");
+char USART_Rx(){
+    return RCREG;
+   }
 
-   printf("Ingresar Centena: Rango(0-2)\r");
-      defensa1:
-       while(RCIF == 0);
-        cen = RCREG -48;
-
-       while(RCREG > '2'){
-           goto defensa1;
-       }
-
-    printf("Ingresar Decenas: \r");
-      defensa2:
-        while(RCIF == 0);
-         dec = RCREG -48;
-
-        if(cen == 2){
-           while(RCREG > '5'){
-               goto defensa2;
-           }
-       }
-
-    printf("Ingresar Unidades: \r");
-      defensa3:
-       while(RCIF == 0);
-        uni = RCREG - 48;
-
-       if(cen == 2 && dec == 5){
-           while(RCREG > '5'){
-               goto defensa3;
-           }
-       }
-      con = concat(cen, dec);
-      full = concat(con, uni);
-      _delay((unsigned long)((250)*(8000000/4000.0)));
-    printf("El numero elegido es: %d", full);
-}
-
-
-int concat(int a, int b)
-{
-
-    char s1[20];
-    char s2[20];
-
-
-    sprintf(s1, "%d", a);
-    sprintf(s2, "%d", b);
-
-
-    strcat(s1, s2);
-
-
-
-    int c = atoi(s1);
-
-
-    return c;
+void USART_Cadena(char *str){
+    while(*str != '\0'){
+        USART_Tx(*str);
+        str++;
+    }
 }

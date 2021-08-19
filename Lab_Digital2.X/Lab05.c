@@ -9,7 +9,7 @@
 //           
 //
 // Creado: 14 aug, 2021
-// Ultima modificacion: 14 aug, 2021
+// Ultima modificacion: 18 aug, 2021
 //*****************************************************************************
 // Palabra de configuración
 //*****************************************************************************
@@ -42,11 +42,11 @@
 //*****************************************************************************
 // Variables
 //*****************************************************************************
-uint8_t contador, ada;
+uint8_t contador;
 char cen, dec, uni;
-char var;
-char con;
-int full;
+char ingreso, posicion, ada;
+char entrante [2];
+
 //*****************************************************************************
 // Definiciones
 //*****************************************************************************
@@ -56,8 +56,14 @@ int full;
 // Prototipos de Funciones
 //*****************************************************************************
 void setup(void);
-void Eusart(void);
-void putch(char data);
+char centenas (int dato);
+char decenas (int dato);
+char unidades (int dato);
+void USART_Tx(char data);
+char USART_Rx(void);
+void USART_Cadena(char *str);
+//void Eusart(void);
+//void putch(char data);
 //*****************************************************************************
 // Código de Interrupción 
 //*****************************************************************************
@@ -91,11 +97,42 @@ void main(void) {
     // Loop infinito
     //*************************************************************************
     while(1){
-       PORTD = full; 
-       Eusart();
+        cen = centenas(contador); //Separamos el contador en centenas,
+        dec = decenas(contador);  //decenas y unidades
+        uni = unidades(contador);
+        cen += 48;  //Convertimos a ASCII las variables
+        dec += 48;
+        uni += 48;
+        if (PIR1bits.RCIF == 1){ //compruebo si se introdujo un dato
+            ingreso = USART_Rx();
+            
+            if(ingreso == 's'){ //Comando que le avisa al PIC de enviar el 
+                USART_Tx(cen);  //contador
+                USART_Tx(dec);
+                USART_Tx(uni);
+            }
+            
+            if(ingreso > 47 && ingreso < 58){   //Guardamos el valor de Adafruit
+                entrante[posicion] = ingreso;
+                posicion++;
+                //PORTD++;
+                if (posicion > 2){
+                    posicion = 0;
+                    ada = (entrante[0] - 48) * 100;
+                    ada +=(entrante[1] - 48) *10;
+                    ada +=(entrante[2] - 48);
+                    PORTD = ada;
+                    //PORTD++;
+                }
+            }
+       }
+        ingreso = 0;
     }
     return;
-}
+        
+//       PORTD = full; 
+//       Eusart();
+    }
 //*****************************************************************************
 // Funciones
 //*****************************************************************************
@@ -144,73 +181,109 @@ void setup(void){
     TXSTAbits.TXEN  = 1;    //Activamos la transmición
 }
 
-void putch(char data){
-    while (TXIF == 0);      //Esperar a que se pueda enviar un nueva caracter
-    TXREG = data;           //Transmitir un caracter
-    return;
+char centenas (int dato){
+    char out = dato / 100;
+    return out;
 }
 
-void Eusart (void) {
-    printf("\r------------------------\r");
-    printf("Valor del Contador: ");
-    __delay_ms(1000);
-    printf("%d",contador);     //Enviamos el valor del Contador
-    printf("\r------------------------\r");
-   
-   printf("Ingresar Centena: Rango(0-2)\r");    //Preguntamos la centena del contador
-      defensa1:  //Si el valor es mayor a 2 aplicamos una defensa
-       while(RCIF == 0);
-        cen = RCREG -48;  
-
-       while(RCREG > '2'){ 
-           goto defensa1;
-       }
-    
-    printf("Ingresar Decenas: \r"); //Preguntamos la decena
-      defensa2: //Si el valor no es valido aplicamos una defensa
-        while(RCIF == 0); 
-         dec = RCREG -48; 
-
-        if(cen == 2){
-           while(RCREG > '5'){
-               goto defensa2;
-           }
-       }
-
-    printf("Ingresar Unidades: \r");    //Preguntamos la unidades
-      defensa3: //Si el valor no es valido aplicamos defensa
-       while(RCIF == 0); 
-        uni = RCREG - 48;
-
-       if(cen == 2 && dec == 5){
-           while(RCREG > '5'){
-               goto defensa3;
-           }
-       }
-      con = concat(cen, dec);   //Concatenamos los datos de decena y centena
-      full = concat(con, uni);  //Concatenamos los daros de con y unidad
-      __delay_ms(250);
-    printf("El numero elegido es: %d", full);   //mostramos el valor concatenado completo
+char decenas (int dato){
+    char out;
+    out = (dato % 100) / 10;
+    return out;
 }
-   
 
-int concat(int a, int b)
-{
- 
-    char s1[20];
-    char s2[20];
- 
-    // Convertimos ambos integers a string
-    sprintf(s1, "%d", a);
-    sprintf(s2, "%d", b);
- 
-    // Concatenamos ambos strings
-    strcat(s1, s2);
- 
-    // Convertimos los strings concatenados
-    // a integers
-    int c = atoi(s1);
- 
-    // regresamos el valor integrer
-    return c;
+char unidades (int dato){
+    char out;
+    out = (dato % 100) % 10;
+    return out;
 }
+
+void USART_Tx(char data){       //envio de un caracter
+    while(TXSTAbits.TRMT == 0);
+    TXREG = data;
+}
+
+char USART_Rx(){                //Lectura de comunicacion serial
+    return RCREG; 
+   }
+
+void USART_Cadena(char *str){   //Envio de cadena de caracteres
+    while(*str != '\0'){
+        USART_Tx(*str);
+        str++;
+    }
+}
+
+
+
+
+//void putch(char data){
+//    while (TXIF == 0);      //Esperar a que se pueda enviar un nueva caracter
+//    TXREG = data;           //Transmitir un caracter
+//    return;
+//}
+//
+//void Eusart (void) {
+//    printf("\r------------------------\r");
+//    printf("Valor del Contador: ");
+//    __delay_ms(1000);
+//    printf("%d",contador);     //Enviamos el valor del Contador
+//    printf("\r------------------------\r");
+//   
+//   printf("Ingresar Centena: Rango(0-2)\r");    //Preguntamos la centena del contador
+//      defensa1:  //Si el valor es mayor a 2 aplicamos una defensa
+//       while(RCIF == 0);
+//        cen = RCREG -48;  
+//
+//       while(RCREG > '2'){ 
+//           goto defensa1;
+//       }
+//    
+//    printf("Ingresar Decenas: \r"); //Preguntamos la decena
+//      defensa2: //Si el valor no es valido aplicamos una defensa
+//        while(RCIF == 0); 
+//         dec = RCREG -48; 
+//
+//        if(cen == 2){
+//           while(RCREG > '5'){
+//               goto defensa2;
+//           }
+//       }
+//
+//    printf("Ingresar Unidades: \r");    //Preguntamos la unidades
+//      defensa3: //Si el valor no es valido aplicamos defensa
+//       while(RCIF == 0); 
+//        uni = RCREG - 48;
+//
+//       if(cen == 2 && dec == 5){
+//           while(RCREG > '5'){
+//               goto defensa3;
+//           }
+//       }
+//      con = concat(cen, dec);   //Concatenamos los datos de decena y centena
+//      full = concat(con, uni);  //Concatenamos los daros de con y unidad
+//      __delay_ms(250);
+//    printf("El numero elegido es: %d", full);   //mostramos el valor concatenado completo
+//}
+//   
+//
+//int concat(int a, int b)
+//{
+// 
+//    char s1[20];
+//    char s2[20];
+// 
+//    // Convertimos ambos integers a string
+//    sprintf(s1, "%d", a);
+//    sprintf(s2, "%d", b);
+// 
+//    // Concatenamos ambos strings
+//    strcat(s1, s2);
+// 
+//    // Convertimos los strings concatenados
+//    // a integers
+//    int c = atoi(s1);
+// 
+//    // regresamos el valor integrer
+//    return c;
+//}
